@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa Uzun</title>
+    <title>Mustafa Uzun | Deep Dive</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -35,10 +37,6 @@
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
             background-image: 
                 radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
                 radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
@@ -51,14 +49,13 @@
             animation: fadeIn 0.8s ease-out;
         }
 
-        /* Hero & Glassmorphism Header */
         header {
             background: var(--card-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 32px;
-            padding: 60px 40px;
+            padding: 50px 40px;
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -77,7 +74,6 @@
             margin-bottom: 20px;
             border: 1px solid rgba(16, 185, 129, 0.2);
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .status-dot {
@@ -89,53 +85,53 @@
         }
 
         @keyframes pulse {
-            0% { opacity: 1; transform: scale(1); }
+            0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.4; transform: scale(1.2); }
-            100% { opacity: 1; transform: scale(1); }
         }
 
-        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; color: #fff; }
-        .hero-title { font-family: var(--font-mono); color: var(--accent); font-size: 1.1rem; opacity: 0.9; }
-
-        /* Interaktif Motto Listesi */
-        .motto-list {
-            list-style: none;
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 5px; color: #fff; }
+        
+        .contact-info {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .motto-list li {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .motto-list li a {
-            text-decoration: none;
-            color: var(--text-dim);
-            padding: 10px 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            gap: 15px;
             font-size: 0.85rem;
+            color: var(--text-dim);
+            margin: 15px 0;
+        }
+        .contact-info span i { color: var(--accent); margin-right: 5px; }
+
+        .personal-meta {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            opacity: 0.8;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Typing Effect Styles */
+        .typing-container {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 1.1rem;
+            min-height: 1.6em;
+            margin-top: 10px;
             font-weight: 500;
         }
-
-        .motto-list li:hover {
-            background: var(--accent-glow);
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.1rem;
+            background-color: var(--accent);
+            margin-left: 5px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
         }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        .motto-list li:hover a { color: #fff; }
-        .motto-list li i { color: var(--accent); font-size: 1rem; }
-
-        /* Grid Yapısı */
         .main-content {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
@@ -150,83 +146,61 @@
             padding: 30px;
         }
 
-        h2 { font-size: 1.3rem; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-        h2 i { color: var(--accent); }
+        h2 { font-size: 1.2rem; margin-bottom: 20px; color: var(--accent); display: flex; align-items: center; gap: 10px; }
 
-        /* Proje Kartları */
         .project-item {
             background: rgba(15, 23, 42, 0.4);
-            padding: 20px;
+            padding: 18px;
             border-radius: 16px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border: 1px solid transparent;
             transition: 0.3s;
             display: flex;
             gap: 15px;
         }
+        .project-item:hover { border-color: var(--accent); background: rgba(15, 23, 42, 0.7); }
+        .project-item i { font-size: 1.2rem; color: var(--accent); }
+        .project-info h3 { font-size: 1rem; margin-bottom: 4px; }
+        .project-info p { font-size: 0.8rem; color: var(--text-dim); }
 
-        .project-item:hover {
-            border-color: rgba(56, 189, 248, 0.3);
-            background: rgba(15, 23, 42, 0.7);
-        }
-
-        .project-item i { font-size: 1.5rem; color: var(--accent); margin-top: 3px; }
-        .project-info h3 { font-size: 1.05rem; margin-bottom: 5px; }
-        .project-info p { font-size: 0.85rem; color: var(--text-dim); }
-
-        /* Stack / Yetenekler */
         .skill-tag {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 8px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-family: var(--font-mono);
             display: inline-block;
-            margin: 0 5px 10px 0;
+            margin: 0 4px 8px 0;
             transition: 0.3s;
         }
+        .skill-tag:hover { background: var(--accent); color: var(--bg); }
 
-        .skill-tag:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-
-        /* Linkler & Footer */
-        .links {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
+        .btn-group { margin-top: 25px; display: flex; justify-content: center; gap: 12px; }
         .btn {
             text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 14px;
-            font-weight: 700;
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
             transition: 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
+            gap: 8px;
         }
-
         .btn-primary { background: var(--accent); color: #000; }
-        .btn-ghost { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); }
-        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+        .btn-ghost { border: 1px solid var(--text-dim); color: var(--text-dim); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px var(--accent-glow); }
 
         footer {
             text-align: center;
             padding: 40px;
             color: var(--text-dim);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-family: var(--font-mono);
-            letter-spacing: 1px;
         }
 
-        @media (max-width: 850px) {
-            .main-content { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
-            header { padding: 40px 20px; }
-        }
+        @media (max-width: 850px) { .main-content { grid-template-columns: 1fr; } h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
@@ -237,38 +211,19 @@
             <div class="status-dot"></div>
             Sistemler Aktif & İzleniyor
         </div>
-        <h1>Mustafa Uzun</h1>
-        <p class="hero-title">Computer Engineer | DevOps Enthusiast </p>
         
-        <ul class="motto-list">
-            <li>
-                <a href="https://github.com/gitafauzun/automation" target="_blank">
-                    <i class="fas fa-bolt"></i> Automate Workflows
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/gitafauzun/scalability" target="_blank">
-                    <i class="fas fa-cloud"></i> Scale Systems
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/gitafauzun/ai-projects" target="_blank">
-                    <i class="fas fa-brain"></i> AI Research
-                </a>
-            </li>
-            <li>
-                <a href="https://mustafauzun.dev/lab" target="_blank">
-                    <i class="fas fa-flask"></i> Homelab
-                </a>
-            </li>
-        </ul>
+        <h1>Mustafa Uzun</h1>
 
-        <div class="links">
+        <div class="typing-container">
+            <span id="typing-text"></span><span class="cursor"></span>
+        </div>
+
+        <div class="btn-group">
             <a href="https://github.com/gitafauzun" target="_blank" class="btn btn-primary">
                 <i class="fab fa-github"></i> GitHub
             </a>
             <a href="resume.html" target="_blank" class="btn btn-ghost">
-            <i class="fas fa-file-invoice"></i> View Full Resume
+                <i class="fas fa-file-invoice"></i> Full Resume
             </a>
         </div>
     </header>
@@ -289,7 +244,7 @@
                 <i class="fab fa-docker"></i>
                 <div class="project-info">
                     <h3>Docker Web Architecture</h3>
-                    <p>Yüksek erişilebilirlik odaklı, Nginx ve Docker Swarm tabanlı web sunucu kümesi.</p>
+                    <p>Nginx ve Docker Swarm tabanlı yüksek erişilebilir web sunucu kümesi.</p>
                 </div>
             </div>
 
@@ -297,7 +252,7 @@
                 <i class="fas fa-terminal"></i>
                 <div class="project-info">
                     <h3>Linux Monitoring Suite</h3>
-                    <p>Bash ve Python ile sistem kaynaklarını izleyen, Zabbix entegreli dashboard projesi.</p>
+                    <p>Bash ve Python ile sistem kaynaklarını izleyen Zabbix dashboard projesi.</p>
                 </div>
             </div>
         </div>
@@ -306,34 +261,75 @@
             <h2><i class="fas fa-layer-group"></i> Tech Stack</h2>
             
             <div style="margin-bottom: 20px;">
-                <p style="font-size: 0.7rem; color: var(--accent); margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Infrastructure</p>
+                <p style="font-size: 0.65rem; color: var(--accent); margin-bottom: 8px; font-weight: 800; text-transform: uppercase;">Infrastructure</p>
                 <span class="skill-tag">VMware vCenter</span>
                 <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">Zabbix</span>
+                <span class="skill-tag">Veeam & PPDM</span>
+                <span class="skill-tag">Zabbix / Grafana</span>
             </div>
 
             <div style="margin-bottom: 20px;">
-                <p style="font-size: 0.7rem; color: var(--accent); margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Development</p>
+                <p style="font-size: 0.65rem; color: var(--accent); margin-bottom: 8px; font-weight: 800; text-transform: uppercase;">Development</p>
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">Bash Shell</span>
-                <span class="skill-tag">Linux (RHEL/Ubuntu)</span>
+                <span class="skill-tag">Linux Admin</span>
                 <span class="skill-tag">Git</span>
             </div>
 
             <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
-                <p style="font-size: 0.8rem; color: var(--text-dim); font-style: italic;">
-                    "Sürekli öğrenen, sistemleri otomatize etmeyi seven bir mühendis."
+                <p style="font-size: 0.75rem; color: var(--text-dim); font-style: italic; line-height: 1.4;">
+                    "Sürekli öğrenen, karmaşıklığı sadeliğe dönüştürmeyi seven bir mühendis."
                 </p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Mustafa Uzun </p>
-        <p style="margin-top: 8px; opacity: 0.5;">Uptime: 99.9% | Server: vCenter_Lab_01</p>
+        <p>&copy; 2026 Mustafa Uzun | Uptime: 99.9%</p>
+        <p style="margin-top: 5px; opacity: 0.4; font-size: 0.6rem;">Powered by Lab_Server_v01</p>
     </footer>
 </div>
+
+<script>
+    const textElement = document.getElementById('typing-text');
+    const phrases = [
+        "Dalgaları durduramazsın ama sörf yapmayı öğrenebilirsin.-Seneca"
+        "Önce kendine ne olmak istediğini söyle, sonra ne yapman gerekiyorsa onu yap.-Epiktetos"
+        "Mutluluğunuz düşüncelerinizin kalitesine bağlıdır.-Marcus Aurelius"
+    ];
+    
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 80;
+
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            typeSpeed = 40;
+        } else {
+            textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+            typeSpeed = 80;
+        }
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            typeSpeed = 2500; // Cümle bittiğinde bekleme süresi
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    document.addEventListener('DOMContentLoaded', type);
+</script>
 
 </body>
 </html>
