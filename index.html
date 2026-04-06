@@ -7,7 +7,6 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/svgs/solid/terminal.svg" type="image/svg+xml">
 
     <style>
         :root {
@@ -24,11 +23,6 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         body {
             font-family: var(--font-main);
             background-color: var(--bg);
@@ -36,82 +30,94 @@
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             overflow-x: hidden;
+            /* Dinamik Arka Plan */
             background-image: 
                 radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 35%),
                 radial-gradient(circle at 90% 90%, rgba(56, 189, 248, 0.08) 0%, transparent 35%);
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             width: 92%;
-            margin: 60px auto;
-            animation: fadeIn 0.8s ease-out;
+            margin: 40px auto;
+            animation: fadeIn 1s ease-out;
         }
 
-        /* Glassmorphism Header */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glassmorphism Header Card */
         header {
             background: var(--card-bg);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 32px;
-            padding: 50px 30px;
+            padding: 60px 40px;
             text-align: center;
-            margin-bottom: 25px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
+        /* Status Badge */
         .status-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(16, 185, 129, 0.08);
+            background: rgba(16, 185, 129, 0.1);
             color: var(--success);
-            padding: 8px 20px;
+            padding: 8px 18px;
             border-radius: 100px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border: 1px solid rgba(16, 185, 129, 0.2);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
         }
 
         .status-dot {
-            width: 10px; height: 10px;
+            width: 8px; height: 8px;
             background: var(--success);
             border-radius: 50%;
-            box-shadow: 0 0 12px var(--success);
+            box-shadow: 0 0 10px var(--success);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(1.3); }
-            100% { opacity: 1; transform: scale(1); }
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
-        h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 5px; }
-        .hero-title { font-family: var(--font-mono); color: var(--accent); font-size: 1.1rem; font-weight: 500; }
+        h1 { 
+            font-size: clamp(2.5rem, 8vw, 3.8rem); 
+            font-weight: 800; 
+            letter-spacing: -2px; 
+            margin-bottom: 10px;
+            background: linear-gradient(to bottom right, #fff 30%, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        /* Typing Text Style */
+        .hero-title { 
+            font-family: var(--font-mono); 
+            color: var(--accent); 
+            font-size: 1.1rem; 
+            margin-bottom: 15px;
+        }
+
+        /* Typing Effect Container */
         .typing-container {
-            height: 30px;
-            margin-top: 15px;
+            height: 24px;
             color: var(--text-dim);
-            font-size: 0.9rem;
-            font-style: italic;
+            font-size: 0.95rem;
+            font-family: var(--font-mono);
         }
-        #typing-text::after {
-            content: '|';
-            animation: blink 0.8s infinite;
-            color: var(--accent);
-            margin-left: 3px;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
 
         /* Motto Tags */
         .motto-list {
@@ -120,15 +126,121 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            margin-top: 35px;
+            margin-top: 40px;
         }
 
         .motto-list li {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .motto-list li a {
             text-decoration: none;
+            color: var(--text-dim);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .motto-list li:hover {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.3);
+        }
+
+        .motto-list li:hover a {
+            color: var(--accent);
+        }
+
+        /* Terminal Style Decorator */
+        .terminal-header {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .dot { width: 10px; height: 10px; border-radius: 50%; background: #334155; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="terminal-header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                Sistemler Aktif
+            </div>
+
+            <h1>Mustafa Uzun</h1>
+            <div class="hero-title">Systems & DevOps Engineer</div>
+            
+            <div class="typing-container">
+                <span id="typing"></span><span style="color: var(--accent);">_</span>
+            </div>
+
+            <ul class="motto-list">
+                <li><a href="#"><i class="fab fa-linux"></i> Linux Admin</a></li>
+                <li><a href="#"><i class="fas fa-server"></i> Virtualization</a></li>
+                <li><a href="#"><i class="fas fa-network-wired"></i> CCNA</a></li>
+                <li><a href="#"><i class="fas fa-shield-halved"></i> Data Security</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Monitoring</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <script>
+        const textElement = document.getElementById('typing');
+        const phrases = [
+            "Automating infrastructure with code...",
+            "Monitoring systems 24/7 with Zabbix...",
+            "Building secure virtual environments...",
+            "Designing scalable DevOps pipelines..."
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Bekleme süresi
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', typeEffect);
+    </script>
+</body>
+</html>
