@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Uzun | Computer Engineer & DevOps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --accent-color: #38bdf8;
+            --secondary-text: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 90%;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        header { text-align: center; margin-bottom: 40px; }
+
+        h1 { margin: 0; font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; }
+        
+        .title { color: var(--accent-color); font-weight: 600; margin-top: 5px; }
+
+        .motto-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-top: 20px;
+        }
+
+        .motto-list li i { color: var(--accent-color); margin-right: 5px; }
+
+        section { margin-top: 30px; }
+
+        h2 { border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 5px; font-size: 1.2rem; }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            text-align: center;
+            border: 1px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .project-card i { font-size: 1.5rem; margin-bottom: 10px; color: var(--accent-color); }
+
+        .links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: var(--accent-color);
+            font-weight: 600;
+            transition: 0.3s;
+            color: #000;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid var(--secondary-text);
+            color: var(--secondary-text);
+        }
+
+        .btn:hover { opacity: 0.8; }
+        .btn-ghost:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+        footer { text-align: center; margin-top: 40px; color: var(--secondary-text); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Mustafa Uzun</h1>
+        <p class="title">Computer Engineer | DevOps Enthusiast 🚀</p>
+        
+        <ul class="motto-list">
+            <li><i class="fas fa-bolt"></i> Automate Workflows</li>
+            <li><i class="fas fa-cloud"></i> Scale Systems</li>
+            <li><i class="fas fa-brain"></i> AI Research</li>
+            <li><i class="fas fa-flask"></i> Lab Docs</li>
+        </ul>
+    </header>
+
+    <section>
+        <h2><i class="fas fa-code-branch"></i> Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <i class="fas fa-network-wired"></i>
+                <div>Network Asset Inventory</div>
+            </div>
+            <div class="project-card">
+                <i class="fab fa-docker"></i>
+                <div>Docker Web Server</div>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-terminal"></i>
+                <div>Linux Monitoring Tool</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="links">
+        <a href="https://github.com/gitafauzun" class="btn"><i class="fab fa-github"></i> GitHub</a>
+        <a href="#" class="btn btn-ghost"><i class="fas fa-file-pdf"></i> Download CV</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Mustafa Uzun | Built with <i class="fas fa-heart"></i> for Systems
+    </footer>
+</div>
+
+</body>
+</html>
