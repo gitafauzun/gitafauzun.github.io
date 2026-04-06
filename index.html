@@ -3,55 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa Uzun | Infrastructure & Automation Engineer</title>
+    <title>Mustafa Uzun | Infrastructure & DevOps Engineer</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/svgs/solid/terminal.svg" type="image/svg+xml">
+
     <style>
         :root {
             --bg: #030712;
-            --card-bg: rgba(30, 41, 59, 0.5);
+            --card-bg: rgba(30, 41, 59, 0.4);
             --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.4);
+            --accent-glow: rgba(56, 189, 248, 0.3);
             --text: #f8fafc;
             --text-dim: #94a3b8;
             --success: #10b981;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-main);
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow-x: hidden;
-        }
-
-        /* Dinamik Arka Plan Efekti */
-        .bg-glow {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #030712 100%);
-            z-index: -1;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
         }
 
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            max-width: 900px;
+            width: 95%;
+            margin: 40px auto;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        /* Header & Cam Efekti */
+        /* Hero & Glassmorphism Header */
         header {
             background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 32px;
             padding: 60px 40px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
@@ -63,195 +72,268 @@
             color: var(--success);
             padding: 6px 16px;
             border-radius: 100px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             margin-bottom: 20px;
             border: 1px solid rgba(16, 185, 129, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .status-dot {
             width: 8px; height: 8px;
             background: var(--success);
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--success);
+            box-shadow: 0 0 10px var(--success);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; }
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
-        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; }
-        .hero-title { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 1.2rem; }
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; color: #fff; }
+        .hero-title { font-family: var(--font-mono); color: var(--accent); font-size: 1.1rem; opacity: 0.9; }
+
+        /* Interaktif Motto Listesi */
+        .motto-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .motto-list li {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .motto-list li a {
+            text-decoration: none;
+            color: var(--text-dim);
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .motto-list li:hover {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .motto-list li:hover a { color: #fff; }
+        .motto-list li i { color: var(--accent); font-size: 1rem; }
 
         /* Grid Yapısı */
-        .main-grid {
+        .main-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px;
         }
 
         .card {
             background: var(--card-bg);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 24px;
             padding: 30px;
-            transition: 0.4s ease;
         }
 
-        .card:hover { border-color: var(--accent-glow); transform: translateY(-5px); }
-
-        h2 { font-size: 1.5rem; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
+        h2 { font-size: 1.3rem; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
         h2 i { color: var(--accent); }
 
-        /* Projeler - Geniş Kartlar */
+        /* Proje Kartları */
         .project-item {
-            display: flex;
-            gap: 20px;
+            background: rgba(15, 23, 42, 0.4);
             padding: 20px;
-            background: rgba(15, 23, 42, 0.3);
             border-radius: 16px;
             margin-bottom: 15px;
             border: 1px solid transparent;
             transition: 0.3s;
+            display: flex;
+            gap: 15px;
         }
 
-        .project-item:hover { background: rgba(15, 23, 42, 0.6); border-color: rgba(56, 189, 248, 0.2); }
-        .project-icon { font-size: 1.8rem; color: var(--accent); }
-        .project-info h3 { font-size: 1.1rem; margin-bottom: 4px; }
-        .project-info p { font-size: 0.9rem; color: var(--text-dim); }
+        .project-item:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            background: rgba(15, 23, 42, 0.7);
+        }
 
-        /* Yetenekler - Etiketler */
-        .skill-group { margin-bottom: 20px; }
-        .skill-group h4 { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px; }
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag {
-            background: #0f172a;
-            border: 1px solid #334155;
-            padding: 5px 12px;
+        .project-item i { font-size: 1.5rem; color: var(--accent); margin-top: 3px; }
+        .project-info h3 { font-size: 1.05rem; margin-bottom: 5px; }
+        .project-info p { font-size: 0.85rem; color: var(--text-dim); }
+
+        /* Stack / Yetenekler */
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
             border-radius: 8px;
             font-size: 0.75rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-mono);
+            display: inline-block;
+            margin: 0 5px 10px 0;
+            transition: 0.3s;
         }
 
-        /* İletişim Butonları */
-        .actions { margin-top: 40px; display: flex; justify-content: center; gap: 15px; }
+        .skill-tag:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+        /* Linkler & Footer */
+        .links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
         .btn {
-            padding: 14px 30px;
-            border-radius: 12px;
-            font-weight: 700;
             text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 14px;
+            font-weight: 700;
             transition: 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            font-size: 0.9rem;
         }
-        .btn-primary { background: var(--accent); color: #030712; box-shadow: 0 10px 20px -5px var(--accent-glow); }
-        .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text); border: 1px solid rgba(255,255,255,0.1); }
-        .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
 
-        footer { text-align: center; margin-top: 60px; padding: 40px; color: var(--text-dim); font-size: 0.8rem; }
+        .btn-primary { background: var(--accent); color: #000; }
+        .btn-ghost { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); }
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
 
-        @media (max-width: 900px) {
-            .main-grid { grid-template-columns: 1fr; }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 850px) {
+            .main-content { grid-template-columns: 1fr; }
             h1 { font-size: 2.5rem; }
+            header { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+<div class="container">
+    <header>
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            Sistemler Aktif & İzleniyor
+        </div>
+        <h1>Mustafa Uzun</h1>
+        <p class="hero-title">Computer Engineer | Infrastructure & Automation Enthusiast</p>
+        
+        <ul class="motto-list">
+            <li>
+                <a href="https://github.com/gitafauzun/automation" target="_blank">
+                    <i class="fas fa-bolt"></i> Automate Workflows
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/gitafauzun/scalability" target="_blank">
+                    <i class="fas fa-cloud"></i> Scale Systems
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/gitafauzun/ai-projects" target="_blank">
+                    <i class="fas fa-brain"></i> AI Research
+                </a>
+            </li>
+            <li>
+                <a href="https://mustafauzun.dev/lab" target="_blank">
+                    <i class="fas fa-flask"></i> Homelab
+                </a>
+            </li>
+        </ul>
 
-    <div class="container">
-        <header>
-            <div class="status-badge">
-                <div class="status-dot"></div>
-                Sistemler Aktif & Yayında
-            </div>
-            <h1>Mustafa Uzun</h1>
-            <p class="hero-title">Infrastructure Engineer & DevOps Enthusiast</p>
+        <div class="links">
+            <a href="https://github.com/gitafauzun" target="_blank" class="btn btn-primary">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-ghost">
+                <i class="fas fa-file-pdf"></i> Download CV
+            </a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="card">
+            <h2><i class="fas fa-code-branch"></i> Öne Çıkan Çalışmalar</h2>
             
-            <div class="actions">
-                <a href="https://github.com/gitafauzun" class="btn btn-primary"><i class="fab fa-github"></i> GitHub Profile</a>
-                <a href="#" class="btn btn-secondary"><i class="fas fa-file-invoice"></i> Resume.pdf</a>
-            </div>
-        </header>
-
-        <div class="main-grid">
-            <div class="card">
-                <h2><i class="fas fa-terminal"></i> Geliştirilen Sistemler</h2>
-                
-                <div class="project-item">
-                    <div class="project-icon"><i class="fas fa-network-wired"></i></div>
-                    <div class="project-info">
-                        <h3>Network Asset Inventory</h3>
-                        <p>Ağ cihazlarını SNMP üzerinden tarayan ve SQL veritabanında envanterleyen otomasyon sistemi.</p>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-icon"><i class="fab fa-docker"></i></div>
-                    <div class="project-info">
-                        <h3>High-Availability Web Cluster</h3>
-                        <p>Nginx Load Balancer ve Docker Swarm kullanılarak kurgulanmış kesintisiz yayın altyapısı.</p>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                    <div class="project-info">
-                        <h3>Zabbix & Grafana Monitoring</h3>
-                        <p>Enterprise sunucu izleme sistemleri için özel dashboard ve alarm mekanizmaları tasarımı.</p>
-                    </div>
+            <div class="project-item">
+                <i class="fas fa-network-wired"></i>
+                <div class="project-info">
+                    <h3>Network Asset Inventory</h3>
+                    <p>Cisco altyapıları için otomatik cihaz tarama ve envanter yönetim aracı.</p>
                 </div>
             </div>
 
-            <div class="card">
-                <h2><i class="fas fa-layer-group"></i> Stack</h2>
-                
-                <div class="skill-group">
-                    <h4>Virtualization</h4>
-                    <div class="tags">
-                        <span class="tag">VMware ESXi</span>
-                        <span class="tag">vCenter</span>
-                        <span class="tag">Docker</span>
-                    </div>
+            <div class="project-item">
+                <i class="fab fa-docker"></i>
+                <div class="project-info">
+                    <h3>Docker Web Architecture</h3>
+                    <p>Yüksek erişilebilirlik odaklı, Nginx ve Docker Swarm tabanlı web sunucu kümesi.</p>
                 </div>
+            </div>
 
-                <div class="skill-group">
-                    <h4>Operating Systems</h4>
-                    <div class="tags">
-                        <span class="tag">Ubuntu</span>
-                        <span class="tag">CentOS</span>
-                        <span class="tag">RHEL</span>
-                        <span class="tag">Windows Server</span>
-                    </div>
+            <div class="project-item">
+                <i class="fas fa-terminal"></i>
+                <div class="project-info">
+                    <h3>Linux Monitoring Suite</h3>
+                    <p>Bash ve Python ile sistem kaynaklarını izleyen, Zabbix entegreli dashboard projesi.</p>
                 </div>
-
-                <div class="skill-group">
-                    <h4>Automation & Network</h4>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Bash</span>
-                        <span class="tag">CCNA</span>
-                        <span class="tag">Zabbix</span>
-                    </div>
-                </div>
-
-                <hr style="opacity: 0.1; margin: 20px 0;">
-                
-                <p style="font-size: 0.85rem; color: var(--text-dim);">
-                    Sistem karmaşıklığını basitleştirmeye ve süreçleri otomatize etmeye odaklı bir mühendisim.
-                </p>
             </div>
         </div>
 
-        <footer>
-            <p>Built with <i class="fas fa-code"></i> & <i class="fas fa-coffee"></i> in 2026</p>
-            <p style="margin-top: 10px; font-family: 'JetBrains Mono'; font-size: 0.7rem;">System Uptime: 99.9%</p>
-        </footer>
+        <div class="card">
+            <h2><i class="fas fa-layer-group"></i> Tech Stack</h2>
+            
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 0.7rem; color: var(--accent); margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Infrastructure</p>
+                <span class="skill-tag">VMware vCenter</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Zabbix</span>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 0.7rem; color: var(--accent); margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Development</p>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Bash Shell</span>
+                <span class="skill-tag">Linux (RHEL/Ubuntu)</span>
+                <span class="skill-tag">Git</span>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                <p style="font-size: 0.8rem; color: var(--text-dim); font-style: italic;">
+                    "Sürekli öğrenen, sistemleri otomatize etmeyi seven bir mühendis."
+                </p>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Mustafa Uzun </p>
+        <p style="margin-top: 8px; opacity: 0.5;">Uptime: 99.9% | Server: vCenter_Lab_01</p>
+    </footer>
+</div>
 
 </body>
 </html>
