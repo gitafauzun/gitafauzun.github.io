@@ -12,6 +12,7 @@
             --text: #1e293b;
             --accent: #0284c7;
             --border: #e2e8f0;
+            --sub-text: #64748b;
         }
         
         body { 
@@ -19,221 +20,200 @@
             background: #f8fafc; 
             color: var(--text); 
             margin: 0; padding: 40px 20px; 
+            line-height: 1.5;
         }
 
         .resume-container {
             max-width: 850px;
             margin: 0 auto;
             background: var(--bg);
-            padding: 50px;
+            padding: 40px 50px;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        header { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { margin: 0; font-size: 2.5rem; color: #0f172a; }
-        .contact-info { display: flex; gap: 20px; margin-top: 10px; font-size: 0.9rem; color: #64748b; flex-wrap: wrap; }
-        .contact-info i { color: var(--accent); }
+        header { border-bottom: 2px solid var(--accent); padding-bottom: 15px; margin-bottom: 25px; }
+        h1 { margin: 0; font-size: 2.2rem; color: #0f172a; }
+        .contact-info { display: flex; gap: 15px; margin-top: 10px; font-size: 0.85rem; color: var(--sub-text); flex-wrap: wrap; }
+        .contact-info i { color: var(--accent); width: 14px; }
 
-        section { margin-bottom: 30px; }
-        h2 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 15px; }
+        section { margin-bottom: 25px; }
+        h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 12px; font-weight: 700; }
 
-        .job { margin-bottom: 20px; }
-        .job-header { display: flex; justify-content: space-between; font-weight: 700; color: #0f172a; }
-        .job-title { font-style: italic; color: #475569; font-weight: 400; }
+        .item { margin-bottom: 15px; }
+        .item-header { display: flex; justify-content: space-between; font-weight: 700; color: #0f172a; font-size: 0.95rem; }
+        .item-title { font-style: italic; color: #475569; font-weight: 500; font-size: 0.9rem; }
         
-        ul { padding-left: 20px; margin-top: 8px; }
-        li { margin-bottom: 5px; font-size: 0.95rem; }
+        ul { padding-left: 18px; margin-top: 5px; }
+        li { margin-bottom: 4px; font-size: 0.9rem; }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .skill-cat h4 { font-size: 0.9rem; margin-bottom: 5px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 30px; }
+        .skill-cat h4 { font-size: 0.9rem; margin: 0 0 2px 0; color: #0f172a; }
+        .skill-cat p { font-size: 0.85rem; margin: 0; color: var(--sub-text); }
 
-        /* Yazdırma Ayarı: Ctrl+P yapıldığında sadece CV çıkar */
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
         @media print {
             body { background: white; padding: 0; }
             .resume-container { box-shadow: none; width: 100%; max-width: 100%; padding: 0; }
             .no-print { display: none; }
+            h2 { border-bottom: 1px solid #ccc; }
         }
 
         .no-print { text-align: right; margin-bottom: 20px; }
-        .print-btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; }
+        .print-btn { background: var(--accent); color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+        .print-btn:hover { opacity: 0.9; }
     </style>
 </head>
 <body>
 
-    <div class="resume-container">
-        <div class="no-print">
+    <div class="no-print">
+        <div style="max-width: 850px; margin: 0 auto;">
             <button onclick="window.print()" class="print-btn"><i class="fas fa-print"></i> PDF Olarak Kaydet / Yazdır</button>
         </div>
-<header>
-    <h1>Mustafa Uzun</h1>
-    <div class="contact-info">
-        <span><i class="fas fa-envelope"></i> mail.mustafa.uzun@gmail.com</span>
-        <span><i class="fas fa-phone"></i> 0531 981 3938</span>
-        <span><i class="fas fa-location-dot"></i> Esenler/İstanbul</span>
-        <span><i class="fab fa-linkedin"></i> linkedin.com/in/mustafauzun99</span>
     </div>
-    <div class="personal-info" style="margin-top: 10px; font-size: 0.9em; opacity: 0.9;">
-        <span><i class="fas fa-calendar-alt"></i> 31.03.1999 (27 Yaş)</span> | 
-        <span><i class="fas fa-shield-alt"></i> Askerlik: Tecilli (08.2027)</span> | 
-        <span><i class="fas fa-id-card"></i> Ehliyet: B Sınıfı</span>
-    </div>
-</header>
+
+    <div class="resume-container">
+        <header>
+            <h1>Mustafa Uzun</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> mail.mustafa.uzun@gmail.com</span>
+                <span><i class="fas fa-phone"></i> 0531 981 3938</span>
+                <span><i class="fas fa-location-dot"></i> Esenler/İstanbul</span>
+                <span><i class="fab fa-linkedin"></i> linkedin.com/in/mustafauzun99</span>
+            </div>
+            <div style="margin-top: 8px; font-size: 0.85rem; color: #475569;">
+                <span><i class="fas fa-calendar-alt"></i> 31.03.1999</span> | 
+                <span><i class="fas fa-shield-alt"></i> Askerlik: Tecilli (08.2027)</span> | 
+                <span><i class="fas fa-id-card"></i> Ehliyet: B Sınıfı</span>
+            </div>
+        </header>
 
         <section>
-    <h2>ÖZET</h2>
-    <p>
-       Bilgisayar Mühendisliği mezunuyum. YTÜ Bilgi Teknolojileri yüksek lisans öğrencisi olarak, kurumsal IT süreçlerinde 1,5 yıla yakın deneyime sahibim.
-    Kariyer rotamı Veri Bilimleri alanına yönelterek;  Veri analizi, görselleştirme, sınıflandırma, tahminleme çalışmaları ile operasyonel verimliliği artırmaya odaklanıyorum.
-    </p>
-</section>
+            <h2>ÖZET</h2>
+            <p style="font-size: 0.9rem; margin: 0;">
+                Bilgisayar Mühendisliği mezunu ve YTÜ Bilgi Teknolojileri yüksek lisans öğrencisiyim. Kurumsal IT süreçlerinde 1,5 yıla yakın sistem destek ve operasyon deneyimine sahibim. Kariyer hedefimi Veri Bilimi ve Veri Analitiği alanına odaklayarak; operasyonel altyapı verilerinden stratejik değerler çıkarmaya, makine öğrenmesi ve ileri analitik yöntemlerle verimliliği artırmaya odaklanıyorum.
+            </p>
+        </section>
 
         <section>
-            <h2>Deneyim</h2>
-            <div class="job">
-                <div class="job-header">
-                    <span>Tacirler Yatırım Menkul Değerler A.Ş </span>
+            <h2>DENEYİM</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>Tacirler Yatırım Menkul Değerler A.Ş</span>
                     <span>10.2025 - 01.2026</span>
                 </div>
-                <div class="job-title">Sistem Destek ve Operasyon Uzman Yardımcısı</div>
+                <div class="item-title">Sistem Destek ve Operasyon Uzman Yardımcısı</div>
                 <ul>
-        <li>
-            <p>
-           · Zabbix ve Grafana sistemleri ile sunucu metriklerini izleme dashboardları oluşturdum. Düzenli olarak raporlama süreçlerini uyguladım.
-            </p>
-            <p>
-              · Sanal sunucu yapılarında veri güvenliği, yedekleme ve kurtarma stratejilerini uyguladım.
-            </p>
-            <p>
-                · Sunucu performans verilerini analiz ederek sistem darboğazlarını tespit ettim ve verimlilik artışı sağlayan raporlar hazırladım ve gerekli operasyonları yaptım.
-            </p>
-            <p>
-                · Yeni uygulamalar için kullanım senaryoları ve eğitimler hazırlayarak kullanıcı adaptasyonunu ve sistemlerin benimsenme hızını artırdım.
-            </p>
-        </li>
-    </ul>
+                    <li>Zabbix ve Grafana kullanarak sunucu metrikleri için özelleştirilmiş izleme dashboardları ve otomatik raporlama mekanizmaları geliştirildi.</li>
+                    <li>Sanal sunucu altyapısında veri güvenliği, yedekleme (3-2-1 kuralı) ve felaket kurtarma stratejileri uygulandı.</li>
+                    <li>Sistem darboğazlarını tespit etmek için performans verileri analiz edildi ve kapasite planlama raporları hazırlandı.</li>
+                </ul>
             </div>
-        </section>
-        <div class="job">
-                <div class="job-header">
-                    <span>Özak Global Holding A.Ş </span>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Özak Global Holding A.Ş</span>
                     <span>08.2024 - 07.2025</span>
                 </div>
-                <div class="job-title">Sistem Destek Uzman Yardımcısı</div>
-             <ul>
-        <li>
-            <p>
-               · Donanım, yazılım ve erişim sorunlarını ITSM/ticket sistemleri üzerinden yöneterek, talepleri belirlenen SLA süreleri içerisinde başarıyla sonuçlandırdım.
-                Active Directory üzerinde kullanıcı hesaplarını yapılandırdım. Yetkilendirme ve erişim kontrollerini yürüttüm.
-            </p>
-            <p>
-                · Altyapı ve Donanım Bakımı, Ağ ve Bağlantı Sorun Giderme alanlarında çözümler ürettim.
-            </p>
-            <p>
-               · Yazılım ve Ofis Çözümleri: Microsoft 365 (Outlook, Teams vb.) ve diğer kurumsal uygulamalarda meydana gelen teknik sorunları analiz ederek giderdim.
-            </p>
-            <p>
-               · Donanım, lisans ve cihaz takibini yaparak zimmetleme süreçlerini raporladım; bilgi güvenliği politikaları çerçevesinde süreç iyileştirme ve dokümantasyon çalışmaları yürüttüm.
-            </p>
-        </li>
-    </ul>
+                <div class="item-title">Sistem Destek Uzman Yardımcısı</div>
+                <ul>
+                    <li>ITSM ticket süreçleri üzerinden donanım, yazılım ve ağ sorunları SLA sürelerine sadık kalınarak çözüldü.</li>
+                    <li>Active Directory üzerinde kullanıcı yetkilendirme, grup politikaları (GPO) ve erişim kontrol süreçleri yönetildi.</li>
+                    <li>Microsoft 365 ekosistemi ve kurumsal uygulamaların teknik desteği ve konfigürasyonu sağlandı.</li>
+                </ul>
             </div>
-        </section>
-         <div class="job">
-                <div class="job-header">
+
+            <div class="item">
+                <div class="item-header">
                     <span>Türkiye Jokey Kulübü</span>
                     <span>02.2024 - 03.2024</span>
                 </div>
-                <div class="job-title">IT Stajyeri</div>
+                <div class="item-title">IT Stajyeri</div>
                 <ul>
-        <li>
-            <p>
-               · Sistem ve Altyapı Yapılandırması: Windows tabanlı bilgisayarların kurulum ve konfigürasyon süreçlerini yürüttüm.
-                Kullanıcı yetkilendirme, veri yedekleme ve IT envanter yönetimi süreçlerini takip ederek teknik destek operasyonlarını deneyimledim.
-            </p>
-                   </li>
-    </ul>
-            </div>
-        </section>
- <div class="job">
-                <div class="job-header">
-                    <span>Arge 24 Teknoloji A.Ş</span>
-                    <span>08.2023 - 10.2023</span>
-                </div>
-                <div class="job-title">Web Geliştirici Stajyeri</div>
-                <ul>
-        <li>
-            <p>
-               · Backend Geliştirme ve Süreç Yönetimi: SOLID prensipleri ile, CRUD işlevlerine sahip sürdürülebilir ve ölçeklenebilir bir telefon rehberi Web API projesinin uçtan uca geliştirme süreçlerini tamamladım.
-            </p>
-                   </li>
-    </ul>
+                    <li>Windows tabanlı sistemlerin kurulum, imaj alma ve son kullanıcı yapılandırma süreçlerinde görev alındı.</li>
+                </ul>
             </div>
         </section>
 
         <section>
-            <h2>Eğitim</h2>
-            <div class="job">
-                <div class="job-header">
-                    <span>Yıldız Teknik Üniversitesi</span>
-                    <span>Mevcut Öğrenci</span>
+            <h2>PROJELER</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>EEG Verileri ile Epilepsi Sınıflandırma</span>
+                    <span>Nisan 2026</span>
                 </div>
-                <div class="job-title">Bilgi Teknolojileri-Yüksek Lisans Eğitimi-İkinci Öğretim</div>
-            </div>
-             <div class="job">
-                <div class="job-header">
-                    <span>İstanbul Ticaret Üniversitesi</span>
-                    <span>2018-2024</span>
-                </div>
-                <div class="job-title">Bilgisayar Mühendisliği-Lisans Eğitimi</div>
-            </div>       
- <div class="job">
-                <div class="job-header">
-                    <span>Özel Kültür Temel Lisesi</span>
-                    <span>2013-2017</span>
-                </div>
-                <div class="job-title">Sayısal Bölüm</div>
-            </div>                        
-        </section>
-         </section>
+                <div class="item-title">Veri Bilimi Projesi</div>
                 <ul>
-        <li>
-            <p>
-              Bu çalışma, e-ticaret yorumlarını Doğal Dil İşleme (NLP) ve Ridge Regresyon yöntemleriyle analiz ederek;
-            kargo ve satıcı kaynaklı suni puanlamaları ayıklayıp ürünün "gerçek hak ettiği puanı" hesaplayan bir makine öğrenmesi projesidir.
-            Veri seti üzerinde TF-IDF vektörleştirme ve ön işleme adımları uygulanarak, yorumlardaki ifadelerden ürün, satıcı ve kargo için ayrı ayrı bağımsız puan tahminleri yapılmış;
-                sonuçta gerçek puan ile tahmin edilen puanlar arasındaki ilişki düşük hata oranlarıyla (%4.37 - %15.89) başarılı bir şekilde modellenmiştir.Detaylar için 
-                   </li>
-    </ul>
+                    <li>Bangalore EEG veri seti kullanılarak multivariate analiz yöntemleri ile nöbet tespiti üzerine çalışıldı.</li>
+                    <li>Python (Scikit-learn) kullanılarak sınıflandırma modelleri geliştirildi ve doğruluk analizleri yapıldı.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span>Local Lab Infrastructure (lab.local)</span>
+                    <span>Mart 2026</span>
+                </div>
+                <div class="item-title">Sistem Yönetimi</div>
+                <ul>
+                    <li>VMware üzerinde DC01, FS01 ve istemci makinelerden oluşan, OU yapısı kurgulanmış izole bir test ortamı kuruldu.</li>
+                </ul>
             </div>
         </section>
 
-        <section>
+        <div class="two-column">
+            <section>
+                <h2>EĞİTİM</h2>
+                <div class="item">
+                    <div class="item-header"><span>Yıldız Teknik Üniversitesi</span></div>
+                    <div class="item-title">Bilgi Teknolojileri (YL) / Devam Ediyor</div>
+                </div>
+                <div class="item">
+                    <div class="item-header"><span>İstanbul Ticaret Üniversitesi</span></div>
+                    <div class="item-title">Bilgisayar Mühendisliği (Lisans)</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>SERTİFİKALAR</h2>
+                <div class="item">
+                    <div class="item-header" style="font-size: 0.85rem;">Cisco Networking Academy</div>
+                    <div class="item-title">CCNA: Introduction to Networks (CCNA1)</div>
+                </div>
+                <div class="item">
+                    <div class="item-header" style="font-size: 0.85rem;">BTK Akademi</div>
+                    <div class="item-title">Veri Bilimi için Python ve SQL Eğitimleri</div>
+                </div>
+            </section>
+        </div>
 
         <section>
-            <h2>Teknik Yetkinlikler</h2>
+            <h2>TEKNOLOJİLER</h2>
             <div class="skills-grid">
                 <div class="skill-cat">
-                    <h4>Sistem</h4>
-                    <p style="font-size: 0.85rem;">Docker, Kubernetes, VMware, Linux (Ubuntu/RHEL)</p>
+                    <h4>Python & Veri Bilimi</h4>
+                    <p>Pandas, Numpy, Scikit-learn, Matplotlib</p>
                 </div>
                 <div class="skill-cat">
-                    <h4>Monitoring</h4>
-                    <p style="font-size: 0.85rem;">Zabbix, Grafana, Temel Network</p>
+                    <h4>Veritabanı & Analiz</h4>
+                    <p>SQL (PostgreSQL/MSSQL), Power BI, Excel</p>
                 </div>
                 <div class="skill-cat">
-                    <h4>Son Kullanıcı</h4>
-                    <p style="font-size: 0.85rem;">Sorun Giderme,Etkili İletişim,Hızlı ve Planlı İş Takibi</p>
+                    <h4>Sistem & Monitoring</h4>
+                    <p>Zabbix, Grafana, Active Directory, VMware</p>
                 </div>
                 <div class="skill-cat">
-                    <h4>Yazılım</h4>
-                    <p style="font-size: 0.85rem;">Python, Bash Scripting, Git</p>
-                </div>
-                  <div class="skill-cat">
-                    <h4>Yapay Zeka</h4>
-                    <p style="font-size: 0.85rem;">Makine Öğrenmesi( NLP,Görüntü İşleme,Algoritma Optimizasyonu</p>
+                    <h4>Geliştirme & Araçlar</h4>
+                    <p>C#, .NET Web API, Git, MATLAB</p>
                 </div>
             </div>
+        </section>
+
+        <section>
+            <h2>MESLEKİ GELİŞİM & İLGİ ALANLARI</h2>
+            <p style="font-size: 0.85rem; margin: 0;">
+                Akademik düzeyde <strong>Araştırma Yöntemleri ve Etik</strong> üzerine çalışmalar yaparak makale analiz süreçlerini yürütüyorum. Teknik olarak Finansal Piyasalar ve <strong>TradingView Pine Script</strong> ile algoritmik göstergeler geliştirmeye ilgi duyuyorum. Boş zamanlarımda Linux dağıtımları (Ubuntu, Mint) üzerinde terminal otomasyonları geliştiriyorum.
+            </p>
         </section>
     </div>
 
