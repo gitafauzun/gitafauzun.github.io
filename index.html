@@ -3,169 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa Uzun</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Mustafa Uzun | Computer Engineer</title>
+    
+    <!-- Professional Font Stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg: #ffffff;
-            --text: #000000;
-            --dim: #707070;
-            --accent: #0047FF; /* Minimalist elektrik mavisi */
+            --primary: #000000;
+            --secondary: #64748b;
+            --accent: #2563eb;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e2e8f0;
+            --max-width: 1000px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--background);
+            color: var(--primary);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 100px auto;
-            padding: 0 40px;
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
         }
 
-        /* Header Bölümü */
-        header { margin-bottom: 120px; }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
-        }
-
-        .role {
-            color: var(--dim);
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
-        /* Bölüm Yapısı */
-        section { margin-bottom: 80px; }
-
-        h2 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--dim);
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .bio {
-            font-size: 1.25rem;
-            font-weight: 300;
-            max-width: 600px;
-        }
-
-        /* Proje & Liste Yapısı */
-        .item {
+        .nav-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .nav-logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; }
+
+        /* Main Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* Grid Layout */
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        /* Project Cards */
+        .card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             color: inherit;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .card h3 { margin-bottom: 12px; font-weight: 600; }
+        .card p { color: var(--secondary); font-size: 0.95rem; }
+
+        /* Skills Tags */
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 10px;
+            background: var(--surface);
+            border-radius: 4px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .contact-btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
             transition: opacity 0.2s;
         }
 
-        .item:hover { opacity: 0.6; }
+        .contact-btn:hover { opacity: 0.9; }
 
-        .item-title { font-weight: 600; font-size: 1.1rem; }
-        .item-meta { font-size: 0.9rem; color: var(--dim); font-variant-numeric: tabular-nums; }
-
-        /* Yetkinlikler (Inline List) */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skill {
-            font-size: 0.95rem;
-            padding: 4px 0;
-            margin-right: 20px;
-        }
-
-        /* İletişim */
-        .contact-links { display: flex; gap: 30px; margin-top: 20px; }
-        
-        .contact-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border-bottom: 1px solid var(--text);
-        }
-
-        @media (max-width: 600px) {
-            .container { margin: 60px auto; }
-            h1 { font-size: 2rem; }
-            .item { flex-direction: column; gap: 4px; }
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .nav-content { padding: 1rem; }
         }
     </style>
 </head>
 <body>
 
+<nav>
+    <div class="nav-content">
+        <div class="nav-logo">MU.</div>
+        <div style="display: flex; gap: 20px; font-size: 0.9rem; font-weight: 500;">
+            <a href="https://linkedin.com/in/mustafauzun99" style="text-decoration:none; color:inherit;">LinkedIn</a>
+            <a href="mailto:mail.mustafa.uzun@gmail.com" style="text-decoration:none; color:inherit;">E-posta</a>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
-    <header>
-        <h1>Mustafa Uzun</h1>
-        <p class="role">Computer Engineer & Data Specialist</p>
-    </header>
-
-    <section>
-        <p class="bio">
-            Sistem operasyonlarını veri bilimiyle optimize ediyorum. 
-            <span style="color: var(--dim)">VMware, Zabbix ve Python ekosisteminde ölçeklenebilir çözümler geliştiriyorum.</span>
+    <section class="hero">
+        <span class="badge">Computer Engineer</span>
+        <h1>Sistem odaklı veri çözümleri geliştiriyorum.</h1>
+        <p class="hero-desc">
+            YTÜ Bilgi Teknolojileri'nde uzmanlaşıyorum. IT operasyonlarını, veri bilimi ve modern altyapı mimarileriyle optimize ediyorum.
         </p>
+        <a href="mailto:mail.mustafa.uzun@gmail.com" class="contact-btn">Projeleri Görün</a>
     </section>
 
-    <section>
-        <h2>Seçili Projeler</h2>
-        
-        <a href="#" class="item">
-            <span class="item-title">Sunucu İzleme Altyapısı</span>
-            <span class="item-meta">Zabbix & Grafana</span>
-        </a>
-        
-        <a href="#" class="item">
-            <span class="item-title">EEG Veri Sınıflandırma</span>
-            <span class="item-meta">ML / Scikit-learn</span>
-        </a>
-        
-        <a href="#" class="item">
-            <span class="item-title">E-Ticaret NLP Analizi</span>
-            <span class="item-meta">Python / Regression</span>
-        </a>
-    </section>
-
-    <section>
-        <h2>Teknik Uzmanlık</h2>
-        <div class="skills-grid">
-            <span class="skill">System Admin</span>
-            <span class="skill">Virtualization</span>
-            <span class="skill">Data Science</span>
-            <span class="skill">Monitoring</span>
+    <div class="section-title">Uzmanlık Alanları</div>
+    <section class="grid">
+        <div class="card">
+            <h3>Infrastructure Monitoring</h3>
+            <p>100+ sunucunun Zabbix ve Grafana üzerinden gerçek zamanlı metrik takibi ve otomasyonu.</p>
+            <div class="tags">
+                <span class="tag">ZABBIX</span>
+                <span class="tag">GRAFANA</span>
+                <span class="tag">LINUX</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Data Science & ML</h3>
+            <p>E-ticaret ve sağlık veri setleri üzerinde tahminleme ve NLP tabanlı duygu analizleri.</p>
+            <div class="tags">
+                <span class="tag">PYTHON</span>
+                <span class="tag">SCIKIT-LEARN</span>
+                <span class="tag">PANDAS</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Virtualization</h3>
+            <p>VMware vCenter ve ESXi altyapılarında yüksek kullanılabilirlikli sunucu yönetimi.</p>
+            <div class="tags">
+                <span class="tag">VMWARE</span>
+                <span class="tag">VCENTER</span>
+                <span class="tag">WINDOWS SERVER</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3>IT Operations</h3>
+            <p>3-2-1 yedekleme kuralı ve ESET güvenlik standartlarıyla uçtan uca sistem güvenliği.</p>
+            <div class="tags">
+                <span class="tag">BACKUP</span>
+                <span class="tag">SECURITY</span>
+                <span class="tag">AD</span>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2>İletişim</h2>
-        <div class="contact-links">
-            <a href="https://linkedin.com/in/mustafauzun99">LinkedIn</a>
-            <a href="mailto:mail.mustafa.uzun@gmail.com">E-posta</a>
-            <a href="https://github.com">GitHub</a>
+    <footer>
+        <div>&copy; 2026 Mustafa Uzun</div>
+        <div style="display:flex; gap: 20px;">
+            <span>Yıldız Teknik Üniversitesi</span>
+            <span>İstanbul</span>
         </div>
-    </section>
-
-    <footer style="margin-top: 100px; color: #ccc; font-size: 0.8rem;">
-        &copy; 2026. Minimalist Tech Portfolio.
     </footer>
 </div>
 
