@@ -1,342 +1,899 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa Uzun | IT Uzmanı</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mustafa Uzun | Bilgisayar Mühendisi & IT Uzmanı</title>
 
-    <style>
-        :root {
-            --bg: #030712;
-            --card-bg: rgba(30, 41, 59, 0.4);
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.3);
-            --text: #f8fafc;
-            --text-dim: #94a3b8;
-            --success: #10b981;
-            --font-main: 'Inter', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+<style>
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+:root{
+    --bg:#020617;
+    --surface:#0f172a;
+    --surface-2:#111c33;
+    --border:rgba(255,255,255,.08);
+    --primary:#38bdf8;
+    --primary-soft:rgba(56,189,248,.12);
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --success:#10b981;
+    --radius:24px;
+    --shadow:0 25px 50px rgba(0,0,0,.45);
+}
 
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .container {
-            max-width: 950px;
-            width: 95%;
-            margin: 40px auto;
-            animation: fadeIn 0.8s ease-out;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        header {
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 32px;
-            padding: 50px 40px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
+body{
+    font-family:'Inter',sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(56,189,248,.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(14,165,233,.10), transparent 35%),
+        var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    overflow-x:hidden;
+}
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--success);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+a{
+    text-decoration:none;
+}
 
-        .status-dot {
-            width: 8px; height: 8px;
-            background: var(--success);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--success);
-            animation: pulse 2s infinite;
-        }
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
 
-        @keyframes pulse {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(1.2); }
-            100% { opacity: 1; transform: scale(1); }
-        }
+/* NAV */
 
-        h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 5px; color: #fff; }
-        .hero-title { font-family: var(--font-mono); color: var(--accent); font-size: 1rem; opacity: 0.9; margin-bottom: 20px; }
-        
-        .summary-text {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 0.95rem;
-            color: var(--text-dim);
-        }
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(2,6,23,.72);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
 
-        .motto-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
+.nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
 
-        .motto-list li {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+.logo{
+    font-size:1.1rem;
+    font-weight:800;
+    letter-spacing:.5px;
+}
 
-        .motto-list li a {
-            text-decoration: none;
-            color: var(--text-dim);
-            padding: 10px 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+.logo span{
+    color:var(--primary);
+}
 
-        .motto-list li:hover {
-            background: var(--accent-glow);
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
+.nav-links{
+    display:flex;
+    gap:28px;
+}
 
-        .motto-list li:hover a { color: #fff; }
+.nav-links a{
+    color:var(--muted);
+    font-size:.92rem;
+    transition:.3s;
+}
 
-        .main-content {
-            display: grid;
-            grid-template-columns: 1.6fr 1fr;
-            gap: 25px;
-        }
+.nav-links a:hover{
+    color:white;
+}
 
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 24px;
-            padding: 30px;
-        }
+/* HERO */
 
-        h2 { font-size: 1.2rem; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
-        h2 i { color: var(--accent); }
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+}
 
-        .project-item {
-            background: rgba(15, 23, 42, 0.4);
-            padding: 20px;
-            border-radius: 16px;
-            margin-bottom: 15px;
-            border: 1px solid transparent;
-            transition: 0.3s;
-            display: flex;
-            gap: 15px;
-        }
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:40px;
+    align-items:center;
+}
 
-        .project-item:hover {
-            border-color: rgba(56, 189, 248, 0.3);
-            background: rgba(15, 23, 42, 0.7);
-        }
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 16px;
+    background:rgba(16,185,129,.12);
+    border:1px solid rgba(16,185,129,.25);
+    color:var(--success);
+    border-radius:999px;
+    font-size:.75rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:26px;
+}
 
-        .project-item i { font-size: 1.4rem; color: var(--accent); margin-top: 3px; }
-        .project-info h3 { font-size: 1rem; margin-bottom: 5px; color: #fff; }
-        .project-info p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.4; }
+.status-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--success);
+    box-shadow:0 0 12px var(--success);
+    animation:pulse 2s infinite;
+}
 
-        .skill-group { margin-bottom: 25px; }
-        .skill-label { font-size: 0.7rem; color: var(--accent); margin-bottom: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: block; }
-        
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-family: var(--font-mono);
-            display: inline-block;
-            margin: 0 5px 8px 0;
-            transition: 0.3s;
-        }
+@keyframes pulse{
+    0%{transform:scale(1);opacity:1;}
+    50%{transform:scale(1.4);opacity:.5;}
+    100%{transform:scale(1);opacity:1;}
+}
 
-        .skill-tag:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+.hero h1{
+    font-size:4.3rem;
+    line-height:1;
+    font-weight:800;
+    letter-spacing:-3px;
+    margin-bottom:18px;
+}
 
-        .links {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
+.hero h1 span{
+    color:var(--primary);
+}
 
-        .btn {
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 14px;
-            font-weight: 700;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-        }
+.hero-subtitle{
+    color:var(--primary);
+    font-size:1.05rem;
+    font-weight:600;
+    margin-bottom:24px;
+}
 
-        .btn-primary { background: var(--accent); color: #000; }
-        .btn-ghost { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); }
-        .btn:hover { transform: scale(1.05); }
+.hero-text{
+    color:var(--muted);
+    max-width:720px;
+    font-size:1rem;
+    margin-bottom:35px;
+}
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-dim);
-            font-size: 0.75rem;
-            font-family: var(--font-mono);
-        }
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-bottom:40px;
+}
 
-        @media (max-width: 850px) {
-            .main-content { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2rem; }
-        }
-    </style>
+.btn{
+    padding:14px 24px;
+    border-radius:16px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s ease;
+    font-weight:700;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#00111d;
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.12);
+    color:var(--text);
+    background:rgba(255,255,255,.03);
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.socials{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.socials a{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--muted);
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.03);
+    transition:.3s;
+    font-size:1rem;
+}
+
+.socials a:hover{
+    background:var(--primary);
+    color:#000;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    background:linear-gradient(180deg, rgba(17,28,51,.9), rgba(15,23,42,.85));
+    border:1px solid var(--border);
+    border-radius:32px;
+    padding:32px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at top right, rgba(56,189,248,.18), transparent 40%);
+}
+
+.card-top{
+    position:relative;
+    z-index:2;
+}
+
+.mini-title{
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--primary);
+    margin-bottom:18px;
+    font-weight:700;
+}
+
+.info-row{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:22px;
+}
+
+.info-row i{
+    width:44px;
+    height:44px;
+    background:var(--primary-soft);
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--primary);
+}
+
+.info-row h4{
+    font-size:.95rem;
+    margin-bottom:4px;
+}
+
+.info-row p{
+    color:var(--muted);
+    font-size:.88rem;
+}
+
+/* SECTION */
+
+section{
+    padding:110px 0;
+}
+
+.section-title{
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:var(--primary);
+    font-size:.8rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:700;
+}
+
+.section-title h2{
+    margin-top:12px;
+    font-size:2.4rem;
+    letter-spacing:-1px;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:24px;
+}
+
+.project-card{
+    background:rgba(15,23,42,.8);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:28px;
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.project-card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:rgba(56,189,248,.08);
+    border-radius:50%;
+    top:-80px;
+    right:-80px;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(56,189,248,.3);
+}
+
+.project-icon{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    background:var(--primary-soft);
+    color:var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    margin-bottom:24px;
+}
+
+.project-card h3{
+    margin-bottom:12px;
+    font-size:1.1rem;
+}
+
+.project-card p{
+    color:var(--muted);
+    font-size:.92rem;
+}
+
+/* SKILLS */
+
+.skills-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+}
+
+.skill-box{
+    background:rgba(15,23,42,.85);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:30px;
+}
+
+.skill-box h3{
+    margin-bottom:22px;
+    font-size:1.1rem;
+}
+
+.skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.skill{
+    padding:10px 14px;
+    border-radius:12px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    color:var(--muted);
+    font-size:.85rem;
+    transition:.3s;
+}
+
+.skill:hover{
+    background:var(--primary);
+    color:#000;
+}
+
+/* EDUCATION */
+
+.education-card{
+    background:rgba(15,23,42,.85);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:32px;
+}
+
+.edu-item{
+    padding-left:24px;
+    border-left:2px solid rgba(56,189,248,.35);
+    margin-bottom:30px;
+    position:relative;
+}
+
+.edu-item:last-child{
+    margin-bottom:0;
+}
+
+.edu-item::before{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:var(--primary);
+    left:-8px;
+    top:4px;
+}
+
+.edu-item h4{
+    margin-bottom:6px;
+}
+
+.edu-item p{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+/* CONTACT */
+
+.contact-box{
+    text-align:center;
+    background:
+    linear-gradient(135deg, rgba(56,189,248,.12), rgba(15,23,42,.9));
+    border:1px solid rgba(56,189,248,.15);
+    padding:60px 30px;
+    border-radius:32px;
+}
+
+.contact-box h2{
+    font-size:2.3rem;
+    margin-bottom:18px;
+}
+
+.contact-box p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto auto 30px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 0;
+    border-top:1px solid rgba(255,255,255,.05);
+    color:var(--muted);
+    text-align:center;
+    font-size:.85rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:980px){
+
+    .hero-grid,
+    .skills-layout{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:120px 0 60px;
+        min-height:auto;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+}
+
+@media(max-width:650px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .section-title h2{
+        font-size:1.8rem;
+    }
+
+    .btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="container">
-    <header>
-        <div class="status-badge">
-            <div class="status-dot"></div>
-            Aktif Sistem
-        </div>
-        <h1>Mustafa Uzun</h1>
-        <p class="hero-title">Bilgisayar Mühendisi | IT Uzmanı</p>
-        
-        <p class="summary-text">
-            Bilgisayar Mühendisliği mezunuyum. YTÜ Bilgi Teknolojileri yüksek lisans öğrencisi olarak, kurumsal IT süreçlerinde sistem desteği alanında 1,5 yıla yakın deneyime sahibim. Sanallaştırma, yedeklilik, veri analizi, görselleştirme, sınıflandırma ve tahminleme çalışmaları ile operasyonel verimliliği artırmaya odaklanıyorum.
-        </p>
+<!-- NAVBAR -->
 
-        <ul class="motto-list">
-            <li><a href="mailto:mail.mustafa.uzun@gmail.com"><i class="fas fa-envelope"></i> mail.mustafa.uzun@gmail.com</a></li>
-            <li><a href="https://linkedin.com/in/mustafauzun99" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-            <li><a href="https://github.com/gitafauzun" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-        </ul>
+<nav>
+    <div class="container nav-inner">
+        <div class="logo">Mustafa<span>Uzun</span></div>
 
-        <div class="links">
-             <a href="https://gitafauzun.github.io/resume.html" class="btn btn-ghost"><i class="fas fa-external-link-alt"></i> CV İndir</a>
-            <a href="https://linkedin.com/in/mustafauzun99" class="btn btn-ghost"><i class="fas fa-external-link-alt"></i> İletişime Geç</a>
-        </div>
-    </header>
-
-    <div class="main-content">
-        <div class="card">
-            <h2><i class="fas fa-chart-line"></i> Öne Çıkan Çalışmalar</h2>
-            
-            <div class="project-item">
-                <i class="fas fa-brain"></i>
-                <div class="project-info">
-                    <h3>EEG Verileri ile Epilepsi Sınıflandırma</h3>
-                    <p>Bangalore EEG veri seti kullanılarak multivariate analiz yöntemleri ve Scikit-learn ile nöbet tespiti modelleri geliştirildi.</p>
-                </div>
-            </div>
-            
-            <div class="project-item">
-                <i class="fas fa-satellite-dish"></i>
-                <div class="project-info">
-                    <h3>Zabbix & Grafana Monitoring Dashboard</h3>
-                    <p>Kurumsal sunucu altyapılarının performans metriklerinin görselleştirilmesi ve darboğaz tespiti için analitik raporlama sistemleri.</p>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <i class="fas fa-database"></i>
-                <div class="project-info">
-                    <h3>Borsa Veri Analiz Modelleri</h3>
-                    <p>Python ve Excel entegrasyonu ile borsa verilerinin teknik analizi ve yatırım stratejisi simülasyonları.</p>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <i class="fas fa-shopping-cart"></i>
-                <div class="project-info">
-                    <h3>E-Ticaret Puan Tahminleme (NLP)</h3>
-                    <p>TF-IDF teknikleri ve regresyon modelleri kullanılarak müşteri yorumlarından ürün puanı tahmin eden makine öğrenmesi modeli.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2><i class="fas fa-layer-group"></i> Yetkinlikler</h2>
-            
-            <div class="skill-group">
-                <span class="skill-label">Sistem & Altyapı</span>
-                <span class="skill-tag">Sistem Destek</span>
-                <span class="skill-tag">Network Destek</span>
-                <span class="skill-tag">Son Kullanıcı Desteği</span>
-                <span class="skill-tag">Yazılım Destek</span>
-                <span class="skill-tag">Donanım Yönetimi</span>
-            </div>
-
-            <div class="skill-group">
-                <span class="skill-label">Veri Bilimi & AI</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Pandas</span>
-                <span class="skill-tag">NumPy</span>
-                <span class="skill-tag">Scikit-learn</span>
-                <span class="skill-tag">NLP</span>
-            </div>
-
-            <div class="skill-group">
-                <span class="skill-label">Analiz & Görselleştirme</span>
-                <span class="skill-tag">Power BI</span>
-                <span class="skill-tag">Grafana</span>
-                <span class="skill-tag">Zabbix</span>
-            </div>
-
-            <h2 style="margin-top: 40px;"><i class="fas fa-graduation-cap"></i> Eğitim</h2>
-            <div style="font-size: 0.85rem; color: var(--text-dim);">
-                <p><strong>Yıldız Teknik Üniversitesi</strong></p>
-                <p>Bilgi Teknolojileri (İÖ) - Yüksek Lisans</p>
-                <p style="margin-bottom: 10px; font-size: 0.75rem;">2026 - Devam Ediyor</p>
-                
-                <p><strong>İstanbul Ticaret Üniversitesi</strong></p>
-                <p>Bilgisayar Mühendisliği - Lisans</p>
-                <p style="font-size: 0.75rem;">2018 - 2024</p>
-            </div>
+        <div class="nav-links">
+            <a href="#projects">Projeler</a>
+            <a href="#skills">Yetkinlikler</a>
+            <a href="#education">Eğitim</a>
+            <a href="#contact">İletişim</a>
         </div>
     </div>
+</nav>
 
-    <footer>
-        <p>&copy; 2026 Mustafa Uzun</p>
-        <p style="margin-top: 8px; opacity: 0.5; font-size: 0.65rem;">Sistem Durumu: Kararlı | Konum: İstanbul</p>
-    </footer>
-</div>
+<!-- HERO -->
+
+<section class="hero">
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="status">
+                <div class="status-dot"></div>
+                Aktif Sistem
+            </div>
+
+            <h1>
+                Mustafa <span>Uzun</span>
+            </h1>
+
+            <div class="hero-subtitle">
+                Bilgisayar Mühendisi • IT Uzmanı • Veri Analizi
+            </div>
+
+            <p class="hero-text">
+                Bilgisayar Mühendisliği mezunuyum. Yıldız Teknik Üniversitesi Bilgi Teknolojileri yüksek lisans öğrencisi olarak; sistem destek, altyapı operasyonları, veri analizi, görselleştirme ve yapay zekâ tabanlı projeler üzerinde çalışıyorum. Operasyonel süreçleri optimize eden, veri odaklı ve ölçeklenebilir çözümler geliştirmeye odaklanıyorum.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="https://gitafauzun.github.io/resume.html" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-file-arrow-down"></i>
+                    CV Görüntüle
+                </a>
+
+                <a href="mailto:mail.mustafa.uzun@gmail.com" class="btn btn-secondary">
+                    <i class="fas fa-paper-plane"></i>
+                    İletişime Geç
+                </a>
+
+            </div>
+
+            <div class="socials">
+
+                <a href="mailto:mail.mustafa.uzun@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a href="https://linkedin.com/in/mustafauzun99" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://github.com/gitafauzun" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT CARD -->
+
+        <div class="hero-card">
+
+            <div class="card-top">
+
+                <div class="mini-title">
+                    Profesyonel Profil
+                </div>
+
+                <div class="info-row">
+                    <i class="fas fa-server"></i>
+
+                    <div>
+                        <h4>Sistem & IT Operasyonları</h4>
+                        <p>
+                            Sistem destek, kullanıcı desteği, altyapı yönetimi ve kurumsal IT süreçleri.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <i class="fas fa-chart-column"></i>
+
+                    <div>
+                        <h4>Veri Analizi & Görselleştirme</h4>
+                        <p>
+                            Power BI, Python, Grafana ve analitik dashboard geliştirme.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <i class="fas fa-brain"></i>
+
+                    <div>
+                        <h4>AI & Machine Learning</h4>
+                        <p>
+                            NLP, sınıflandırma, tahminleme ve veri modelleme çalışmaları.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <i class="fas fa-location-dot"></i>
+
+                    <div>
+                        <h4>Konum</h4>
+                        <p>
+                            İstanbul, Türkiye
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Portföy</span>
+            <h2>Öne Çıkan Çalışmalar</h2>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fas fa-wave-square"></i>
+                </div>
+
+                <h3>EEG Verileri ile Epilepsi Sınıflandırma</h3>
+
+                <p>
+                    Bangalore EEG veri seti kullanılarak Scikit-learn ve multivariate analiz yöntemleriyle nöbet tespit modelleri geliştirildi.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+
+                <h3>Zabbix & Grafana Monitoring</h3>
+
+                <p>
+                    Sunucu performans metriklerinin izlenmesi, darboğaz tespiti ve analitik dashboard sistemleri geliştirildi.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+
+                <h3>Borsa Veri Analiz Modelleri</h3>
+
+                <p>
+                    Python ve Excel entegrasyonu ile teknik analiz, veri modelleme ve yatırım stratejisi simülasyonları geliştirildi.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fas fa-cart-shopping"></i>
+                </div>
+
+                <h3>E-Ticaret NLP Puan Tahminleme</h3>
+
+                <p>
+                    TF-IDF teknikleri ve regresyon modelleri kullanılarak müşteri yorumlarından puan tahmini yapan ML modeli geliştirildi.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Teknik Yetkinlikler</span>
+            <h2>Uzmanlık Alanları</h2>
+        </div>
+
+        <div class="skills-layout">
+
+            <div class="skill-box">
+
+                <h3>Sistem & Altyapı</h3>
+
+                <div class="skill-tags">
+                    <div class="skill">Sistem Destek</div>
+                    <div class="skill">Network Destek</div>
+                    <div class="skill">Son Kullanıcı Desteği</div>
+                    <div class="skill">Yazılım Destek</div>
+                    <div class="skill">Donanım Yönetimi</div>
+                    <div class="skill">IT Operasyonları</div>
+                </div>
+
+            </div>
+
+            <div class="skill-box">
+
+                <h3>Veri Bilimi & AI</h3>
+
+                <div class="skill-tags">
+                    <div class="skill">Python</div>
+                    <div class="skill">Pandas</div>
+                    <div class="skill">NumPy</div>
+                    <div class="skill">Scikit-learn</div>
+                    <div class="skill">Machine Learning</div>
+                    <div class="skill">NLP</div>
+                </div>
+
+            </div>
+
+            <div class="skill-box">
+
+                <h3>Monitoring & Analitik</h3>
+
+                <div class="skill-tags">
+                    <div class="skill">Power BI</div>
+                    <div class="skill">Grafana</div>
+                    <div class="skill">Zabbix</div>
+                    <div class="skill">Dashboard Design</div>
+                    <div class="skill">Raporlama</div>
+                </div>
+
+            </div>
+
+            <div class="skill-box">
+
+                <h3>Ek Teknolojiler</h3>
+
+                <div class="skill-tags">
+                    <div class="skill">Git & GitHub</div>
+                    <div class="skill">Linux</div>
+                    <div class="skill">Excel</div>
+                    <div class="skill">Veri Görselleştirme</div>
+                    <div class="skill">Analitik Düşünme</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Akademik Geçmiş</span>
+            <h2>Eğitim Bilgileri</h2>
+        </div>
+
+        <div class="education-card">
+
+            <div class="edu-item">
+                <h4>Yıldız Teknik Üniversitesi</h4>
+                <p>Bilgi Teknolojileri (İÖ) - Yüksek Lisans</p>
+                <p>2026 - Devam Ediyor</p>
+            </div>
+
+            <div class="edu-item">
+                <h4>İstanbul Ticaret Üniversitesi</h4>
+                <p>Bilgisayar Mühendisliği - Lisans</p>
+                <p>2018 - 2024</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>Birlikte Çalışalım</h2>
+
+            <p>
+                Sistem yönetimi, veri analizi, IT operasyonları ve teknoloji projeleri için benimle iletişime geçebilirsiniz.
+            </p>
+
+            <div class="hero-buttons" style="justify-content:center; margin-top:10px;">
+
+                <a href="mailto:mail.mustafa.uzun@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    E-Posta Gönder
+                </a>
+
+                <a href="https://linkedin.com/in/mustafauzun99" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <p>© 2026 Mustafa Uzun — Tüm Hakları Saklıdır.</p>
+
+        <p style="margin-top:8px; font-size:.8rem;">
+            Sistem Durumu: Kararlı • İstanbul / Türkiye
+        </p>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
