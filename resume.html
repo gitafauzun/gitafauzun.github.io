@@ -1,946 +1,358 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mustafa Uzun | CV</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
-<style>
-
-:root{
-    --bg:#0b1120;
-    --surface:#111827;
-    --surface-light:#1e293b;
-    --card:rgba(15,23,42,.82);
-    --border:rgba(255,255,255,.06);
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --accent:#60a5fa;
-    --accent-soft:rgba(96,165,250,.12);
-    --success:#22c55e;
-    --shadow:
-        0 10px 25px rgba(0,0,0,.25),
-        0 25px 60px rgba(0,0,0,.35);
-    --radius:28px;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:
-        radial-gradient(circle at top left, rgba(96,165,250,.10), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(14,165,233,.08), transparent 25%),
-        linear-gradient(180deg,#020617 0%,#0b1120 100%);
-    color:var(--text);
-    padding:50px 24px;
-    min-height:100vh;
-    line-height:1.7;
-}
-
-/* ======================
-   MAIN CONTAINER
-====================== */
-
-.resume-container{
-    max-width:1280px;
-    margin:auto;
-    background:rgba(15,23,42,.70);
-    backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
-    border:1px solid var(--border);
-    border-radius:36px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-    position:relative;
-}
-
-/* subtle glow */
-
-.resume-container::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(
-            120deg,
-            transparent 0%,
-            rgba(255,255,255,.03) 50%,
-            transparent 100%
-        );
-    pointer-events:none;
-}
-
-/* ======================
-   HEADER
-====================== */
-
-header{
-    position:relative;
-    padding:72px 72px 58px;
-    border:none !important;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(96,165,250,.10),
-            rgba(15,23,42,.96)
-        );
-    overflow:hidden;
-}
-
-header::before{
-    content:"";
-    position:absolute;
-    width:520px;
-    height:520px;
-    border-radius:50%;
-    background:rgba(96,165,250,.10);
-    top:-280px;
-    right:-180px;
-    filter:blur(8px);
-}
-
-header::after{
-    content:"";
-    position:absolute;
-    width:320px;
-    height:320px;
-    border-radius:50%;
-    background:rgba(56,189,248,.08);
-    bottom:-180px;
-    left:-120px;
-}
-
-/* name */
-
-h1{
-    position:relative;
-    z-index:2;
-    font-size:4.8rem !important;
-    font-weight:800;
-    line-height:.95;
-    letter-spacing:-4px;
-    color:#fff !important;
-    margin-bottom:22px !important;
-}
-
-/* professional subtitle effect */
-
-h1::after{
-    content:"IT Infrastructure & Systems";
-    display:block;
-    margin-top:16px;
-    font-size:.95rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    font-weight:600;
-    color:var(--accent);
-}
-
-/* CONTACT */
-
-.contact-info{
-    position:relative;
-    z-index:2;
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-    margin-top:26px !important;
-}
-
-.contact-info span{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:13px 18px;
-    border-radius:16px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.05);
-    color:#dbe7f2 !important;
-    font-size:.9rem !important;
-    transition:.3s ease;
-}
-
-.contact-info span:hover{
-    border-color:rgba(96,165,250,.25);
-    transform:translateY(-3px);
-    background:rgba(255,255,255,.06);
-}
-
-.contact-info i{
-    color:var(--accent) !important;
-    font-size:.92rem;
-}
-
-/* EXTRA INFO */
-
-header > div:last-child{
-    position:relative;
-    z-index:2;
-    margin-top:20px !important;
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    color:var(--muted) !important;
-}
-
-header > div:last-child span{
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.04);
-    padding:10px 14px;
-    border-radius:14px;
-}
-
-/* ======================
-   PRINT BUTTON
-====================== */
-
-.no-print{
-    margin-bottom:24px;
-}
-
-.no-print > div{
-    max-width:1280px !important;
-}
-
-.print-btn{
-    background:linear-gradient(
-        135deg,
-        #60a5fa,
-        #38bdf8
-    ) !important;
-    color:#03111f !important;
-    border:none !important;
-    padding:14px 22px !important;
-    border-radius:16px !important;
-    font-weight:700 !important;
-    font-size:.92rem !important;
-    box-shadow:0 10px 30px rgba(56,189,248,.22);
-    transition:.35s ease;
-}
-
-.print-btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 40px rgba(56,189,248,.28);
-}
-
-/* ======================
-   CONTENT LAYOUT
-====================== */
-
-section{
-    padding:0 72px;
-    margin-bottom:54px !important;
-}
-
-section:first-of-type{
-    margin-top:58px;
-}
-
-/* SECTION TITLES */
-
-h2{
-    position:relative;
-    display:flex;
-    align-items:center;
-    gap:14px;
-    font-size:1rem !important;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    color:var(--accent) !important;
-    border:none !important;
-    margin-bottom:28px !important;
-    padding-bottom:14px;
-}
-
-h2::before{
-    content:"";
-    width:46px;
-    height:2px;
-    border-radius:999px;
-    background:linear-gradient(
-        90deg,
-        var(--accent),
-        transparent
-    );
-}
-
-h2::after{
-    content:"";
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:1px;
-    background:linear-gradient(
-        90deg,
-        rgba(96,165,250,.35),
-        transparent
-    );
-}
-
-/* ======================
-   CARD SYSTEM
-====================== */
-
-.item,
-.education-item,
-.skill-cat,
-.comp-item{
-    background:rgba(255,255,255,.025);
-    border:1px solid rgba(255,255,255,.06);
-    border-radius:24px;
-    padding:26px;
-    transition:.35s ease;
-    backdrop-filter:blur(10px);
-}
-
-.item:hover,
-.education-item:hover,
-.skill-cat:hover,
-.comp-item:hover{
-    transform:translateY(-6px);
-    border-color:rgba(96,165,250,.20);
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.18),
-        0 0 0 1px rgba(96,165,250,.08);
-}
-
-/* EXPERIENCE ITEMS */
-
-.item{
-    margin-bottom:24px !important;
-}
-
-.item-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:18px;
-    margin-bottom:12px;
-    flex-wrap:wrap;
-}
-
-.item-header span:first-child{
-    color:#fff !important;
-    font-size:1.05rem !important;
-    font-weight:700;
-}
-
-.item-header span:last-child{
-    background:rgba(96,165,250,.10);
-    color:var(--accent);
-    padding:7px 14px;
-    border-radius:999px;
-    font-size:.78rem !important;
-    font-weight:700;
-    letter-spacing:.5px;
-}
-
-/* title */
-
-.item-title{
-    color:var(--muted) !important;
-    font-size:.92rem !important;
-    margin-bottom:16px;
-    font-style:normal !important;
-    font-weight:500 !important;
-}
-
-/* LISTS */
-
-ul{
-    padding-left:20px !important;
-}
-
-li{
-    color:#dbe7f2 !important;
-    margin-bottom:12px !important;
-    font-size:.93rem !important;
-}
-
-/* SUMMARY */
-
-section p{
-    color:#d5dfeb;
-    font-size:.95rem !important;
-}
-
-/* ======================
-   EDUCATION
-====================== */
-
-.education-item{
-    border-left:none !important;
-    margin-bottom:20px !important;
-}
-
-.edu-main{
-    color:#fff !important;
-    font-size:1rem;
-}
-
-.edu-date{
-    background:rgba(96,165,250,.12) !important;
-    border:none !important;
-    color:var(--accent) !important;
-    padding:7px 15px !important;
-    border-radius:999px !important;
-    font-weight:700;
-    font-size:.8rem !important;
-}
-
-.edu-degree{
-    color:var(--muted) !important;
-    margin-top:12px !important;
-}
-
-/* ======================
-   SKILLS
-====================== */
-
-.skills-grid{
-    display:grid !important;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:18px;
-}
-
-.skill-cat h4{
-    color:#fff !important;
-    margin-bottom:14px !important;
-    font-size:1rem !important;
-}
-
-.skill-cat p{
-    color:var(--muted) !important;
-    line-height:1.9;
-    font-size:.9rem !important;
-}
-
-/* ======================
-   COMPETENCIES
-====================== */
-
-.competencies-grid{
-    display:grid !important;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:16px !important;
-}
-
-.comp-item{
-    display:flex !important;
-    align-items:flex-start !important;
-    gap:14px !important;
-    color:#dbe7f2 !important;
-    font-size:.92rem !important;
-    min-height:88px;
-}
-
-.comp-item i{
-    color:var(--accent) !important;
-    font-size:1rem !important;
-    margin-top:3px;
-}
-
-/* ======================
-   CERTIFICATES
-====================== */
-
-section .item-header[style]{
-    color:#fff !important;
-    font-size:.92rem !important;
-}
-
-/* ======================
-   RESPONSIVE
-====================== */
-
-@media(max-width:992px){
-
-    header{
-        padding:52px 34px;
-    }
-
-    section{
-        padding:0 34px;
-    }
-
-    h1{
-        font-size:3.2rem !important;
-    }
-}
-
-@media(max-width:768px){
-
-    body{
-        padding:20px 12px;
-    }
-
-    h1{
-        font-size:2.6rem !important;
-        letter-spacing:-2px;
-    }
-
-    .contact-info{
-        flex-direction:column;
-    }
-
-    .contact-info span{
-        width:100%;
-    }
-
-    .item-header{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-}
-
-/* ======================
-   PRINT MODE
-====================== */
-
-@media print{
-
-    body{
-        background:#fff !important;
-        padding:0;
-    }
-
-    .resume-container{
-        background:#fff !important;
-        border:none !important;
-        box-shadow:none !important;
-    }
-
-    .no-print{
-        display:none !important;
-    }
-
-    header{
-        background:#fff !important;
-    }
-
-    h1,
-    .item-header span:first-child,
-    .edu-main,
-    .skill-cat h4{
-        color:#0f172a !important;
-    }
-
-    p,
-    li,
-    .item-title,
-    .edu-degree{
-        color:#475569 !important;
-    }
-
-    .item,
-    .education-item,
-    .skill-cat,
-    .comp-item{
-        background:#fff !important;
-        border:1px solid #e5e7eb !important;
-        box-shadow:none !important;
-    }
-
-    h2{
-        color:#2563eb !important;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Uzun | CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1e293b;
+            --accent: #0284c7;
+            --border: #e2e8f0;
+            --sub-text: #64748b;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #f8fafc; 
+            color: var(--text); 
+            margin: 0; padding: 40px 20px; 
+            line-height: 1.5;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg);
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header { border-bottom: 2px solid var(--accent); padding-bottom: 15px; margin-bottom: 25px; }
+        h1 { margin: 0; font-size: 2.2rem; color: #0f172a; }
+        .contact-info { display: flex; gap: 15px; margin-top: 10px; font-size: 0.85rem; color: var(--sub-text); flex-wrap: wrap; }
+        .contact-info i { color: var(--accent); width: 14px; }
+
+        section { margin-bottom: 25px; }
+        h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 12px; font-weight: 700; }
+
+        .item { margin-bottom: 15px; }
+        .item-header { display: flex; justify-content: space-between; font-weight: 700; color: #0f172a; font-size: 0.95rem; }
+        .item-title { font-style: italic; color: #475569; font-weight: 500; font-size: 0.9rem; }
+        
+        ul { padding-left: 18px; margin-top: 5px; }
+        li { margin-bottom: 4px; font-size: 0.9rem; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 30px; }
+        .skill-cat h4 { font-size: 0.9rem; margin: 0 0 2px 0; color: #0f172a; }
+        .skill-cat p { font-size: 0.85rem; margin: 0; color: var(--sub-text); }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .resume-container { box-shadow: none; width: 100%; max-width: 100%; padding: 0; }
+            .no-print { display: none; }
+            h2 { border-bottom: 1px solid #ccc; }
+        }
+
+        .no-print { text-align: right; margin-bottom: 20px; }
+        .print-btn { background: var(--accent); color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
+        .print-btn:hover { opacity: 0.9; }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 3px solid var(--border);
+            transition: border-color 0.3s;
+        }
+        .education-item:hover {
+            border-left-color: var(--accent);
+        }
+        .edu-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .edu-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            background: #f0f9ff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+        .edu-degree {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .edu-degree i {
+            font-size: 0.8rem;
+            color: var(--sub-text);
+        }
+
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .comp-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #475569;
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        .comp-item i {
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="no-print">
-    <div class="print-wrap">
-        <button onclick="window.print()" class="print-btn">
-            <i class="fas fa-print"></i>
-            PDF Olarak Kaydet / Yazdır
-        </button>
-    </div>
-</div>
-
-<div class="resume-wrapper">
-
-<div class="resume-layout">
-
-<!-- SIDEBAR -->
-
-<aside class="sidebar">
-
-    <div class="profile-top">
-
-        <div class="profile-tag">
-            Aktif CV
+    <div class="no-print">
+        <div style="max-width: 850px; margin: 0 auto;">
+            <button onclick="window.print()" class="print-btn"><i class="fas fa-print"></i> PDF Olarak Kaydet / Yazdır</button>
         </div>
-
-        <h1>Mustafa Uzun</h1>
-
-        <div class="sidebar-sub">
-            Bilgisayar Mühendisi • IT Uzmanı
-        </div>
-
-        <div class="contact-list">
-
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>mail.mustafa.uzun@gmail.com</span>
-            </div>
-
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <span>0531 981 3938</span>
-            </div>
-
-            <div class="contact-item">
-                <i class="fas fa-location-dot"></i>
-                <span>Esenler/İstanbul</span>
-            </div>
-
-            <div class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <span>linkedin.com/in/mustafauzun99</span>
-            </div>
-
-            <div class="contact-item">
-                <i class="fas fa-calendar-alt"></i>
-                <span>Doğum Tarihi: 31.03.1999</span>
-            </div>
-
-            <div class="contact-item">
-                <i class="fas fa-shield-alt"></i>
-                <span>Askerlik: Tecilli 08.2027</span>
-            </div>
-
-            <div class="contact-item">
-                <i class="fas fa-id-card"></i>
-                <span>Ehliyet: B Sınıfı</span>
-            </div>
-
-        </div>
-
     </div>
 
-    <div class="side-section">
+    <div class="resume-container">
+        <header>
+            <h1>Mustafa Uzun</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> mail.mustafa.uzun@gmail.com</span>
+                <span><i class="fas fa-phone"></i> 0531 981 3938</span>
+                <span><i class="fas fa-location-dot"></i> Esenler/İstanbul</span>
+                <span><i class="fab fa-linkedin"></i> linkedin.com/in/mustafauzun99</span>
+            </div>
+            <div style="margin-top: 8px; font-size: 0.85rem; color: #475569;">
+                <span><i class="fas fa-calendar-alt"></i> Doğum Tarihi: 31.03.1999</span> | 
+                <span><i class="fas fa-shield-alt"></i> Askerlik: Tecilli 08.2027</span> | 
+                <span><i class="fas fa-id-card"></i> Ehliyet: B Sınıfı</span>
+            </div>
+        </header>
 
-        <div class="side-title">
-            Mesleki Gelişim & İlgi Alanları
-        </div>
+        <section>
+            <h2>ÖZET</h2>
+            <p style="font-size: 0.9rem; margin: 0;">
+                Bilgisayar mühendisliği mezunuyum. Yıldız Teknik Üniversitesi, Bilgi Teknolojileri ikinci öğretim yüksek lisans öğrencisiyim.
+                Sistem teknolojileri, sanallaştırma ve yedeklilik alanlarında kendimi geliştirmekteyim. Sistem destek veya son kullanıcı desteği
+                pozisyonlarında kurumsal IT altyapılarına katkı sağlayabileceğim rollerde tam zamanlı iş aramaktayım.
+            </p>
+        </section>
 
-        <div class="side-card">
-            <p>
+        <section>
+            <h2>DENEYİM</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>Tacirler Yatırım Menkul Değerler A.Ş</span>
+                    <span>10.2025 - 01.2026</span>
+                </div>
+                <div class="item-title">Sistem Destek ve Operasyon Uzman Yardımcısı</div>
+                <ul>
+                    <li>Veeam Backup & Replication ve PPDM kullanarak backup, restore ve disaster recovery operasyonlarını destekledim.</li>
+                    <li>Planlı bakım süreçleri kapsamında Windows sunucular üzerinde ESET Endpoint Security, Manage Engine Agent ve Zabbix Agent güncelleme ve versiyon yönetimi işlemlerini gerçekleştirerek sistem güvenliği ve izleme sürekliliğini sağladım.</li>
+                    <li>Windows Server ortamlarında Active Directory AD kullanıcı, grup ve Group Policy GPO yönetimi operasyonlarına destek sağladım. DNS ve DHCP servislerinin yapılandırılması, izlenmesi ve servis sürekliliğine yönelik çalışmalarda görev aldım.</li>
+                    <li>Microsoft Exchange Server migration süreçlerinde teknik destek sağlayarak, geçiş öncesi ve sonrası son kullanıcı desteği verdim.</li>
+                    <li>Kullanıcı - Uygulama Adaptasyon eğitimleri, kullanım senaryoları ve temel destek süreçlerine ayrıca kurum içi ve kurum dışı denetim süreçlerine katkı sağladım.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Özak Global Holding A.Ş</span>
+                    <span>08.2024 - 07.2025</span>
+                </div>
+                <div class="item-title">Sistem Destek Uzman Yardımcısı</div>
+                <ul>
+                    <li>IT Altyapı ve Operasyon Departmanı bünyesinde, kurum içi kullanıcıların donanım ve yazılım ihtiyaçlarına yönelik son kullanıcı arıza ve taleplerini ticket sistemi üzerinden alarak SLA kapsamında çözüme ulaştırdım.</li>
+                    <li>İşe giriş / çıkış onboarding & offboarding süreçlerinde bilgisayar, yazılım ve çevre birimi kurulumlarını gerçekleştirdim; kullanıcı hesap ve yetkilendirme işlemlerine destek verdim.</li>
+                    <li>Masaüstü ve dizüstü bilgisayarlar, yazıcı, tarayıcı, IP telefon ve mobil cihazlar için donanımsal ve yazılımsal destek sağladım. Yazıcı arızaları, toner ve sarf malzemeleri takibi ile garanti ve yetkili servis süreçlerini yürüttüm.</li>
+                    <li>IT envanter yönetimi, donanım takibi, zimmet süreçleri ve raporlama çalışmalarına katkıda bulundum.</li>
+                    <li>Donanım, lisans ve cihaz envanter takibinin yapılması, zimmetleme süreçlerinin raporlanması; bilgi güvenliği politikaları doğrultusunda dokümantasyon ve süreç iyileştirme çalışmalarının yürütülmesinde görev aldım.</li>
+                    <li>Kablolu/kablosuz ağ LAN/WLAN bağlantı sorunlarının giderilmesi, temel ağ destek işlemlerinde network ekibiyle koordineli çalıştım.</li>
+                    <li>Üst yönetim VIP kullanıcılar için hızlı müdahale gerektiren IT destek taleplerini önceliklendirerek çözüme ulaştırdım. Günlük operasyonel iş akışında kullanıcı memnuniyeti ve iş sürekliliğini önceliklendirdim.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Türkiye Jokey Kulübü</span>
+                    <span>02.2024 - 03.2024</span>
+                </div>
+                <div class="item-title">IT Stajyeri</div>
+                <ul>
+                    <li>Windows tabanlı sistemlerin kurulum, konfigürasyon ve imaj alma süreçlerinin yürütülmesi; kullanıcı yetkilendirme, veri yedekleme ve IT envanter yönetimi süreçlerinin takibi ile teknik destek operasyonlarının gerçekleştirilmesi.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span>ARGE24 Teknoloji</span>
+                    <span>08.2023 - 10.2023</span>
+                </div>
+                <div class="item-title">Web Geliştirme Stajyeri</div>
+                <ul>
+                    <li>SOLID prensipleri doğrultusunda, CRUD işlevlerine sahip, sürdürülebilir ve ölçeklenebilir bir telefon rehberi Web API projesinin uçtan uca geliştirme ve yaşam döngüsü süreçlerinin tamamlanması.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>PROJELER</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span>EEG Verileri ile Epilepsi Sınıflandırma</span>
+                    <span>Nisan 2026</span>
+                </div>
+                <div class="item-title">Veri Bilimi Projesi</div>
+                <ul>
+                    <li>Bangalore EEG veri seti kullanılarak multivariate analiz yöntemleri ile nöbet tespiti üzerine çalışıldı.</li>
+                    <li>Python (Scikit-learn) kullanılarak sınıflandırma modelleri geliştirildi ve doğruluk analizleri yapıldı.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span>E-Ticaret Ürün Yorum-Puan Regresyon Analizi</span>
+                    <span>2023</span>
+                </div>
+                <div class="item-title">Lisans Bitirme Projesi</div>
+                <ul>
+                    <li>Python (Scikit-learn, Pandas, NumPy) kütüphaneleri kullanılarak, müşteri yorumları ve puanları arasındaki korelasyonun analiz edilmesi ve e-ticaret platformları için optimize edilmiş bir puan tahminleme modeli geliştirilmesi.</li>
+                    <li>NLP (TF-IDF) teknikleri ile ham metin verilerinin ön işleme süreçlerinin yönetilmesi, özellik çıkarımı ve farklı regresyon modellerinin performans karşılaştırmalı analizlerinin yürütülmesi.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>EĞİTİM</h2>
+            <div class="education-item">
+                <div class="edu-main">
+                    <span>Yıldız Teknik Üniversitesi</span>
+                    <span class="edu-date">2026 - Devam Ediyor</span>
+                </div>
+                <div class="edu-degree">
+                    <i class="fas fa-graduation-cap"></i> 
+                    Bilgi Teknolojileri (İÖ) / Yüksek Lisans
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="edu-main">
+                    <span>İstanbul Ticaret Üniversitesi</span>
+                    <span class="edu-date">2018 - 2024</span>
+                </div>
+                <div class="edu-degree">
+                    <i class="fas fa-university"></i> 
+                    Bilgisayar Mühendisliği / Lisans
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="edu-main">
+                    <span>Özel Esenler Kültür Temel Lisesi</span>
+                    <span class="edu-date">2013 - 2017</span>
+                </div>
+                <div class="edu-degree">
+                    <i class="fas fa-graduation-cap"></i> 
+                    Sayısal Alan / Lise
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>SERTİFİKALAR</h2>
+            <div class="skills-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="item">
+                    <div class="item-header" style="font-size: 0.85rem;">Network Technician Career Path</div>
+                    <div class="item-title">Cisco | 2026</div>
+                </div>
+                <div class="item">
+                    <div class="item-header" style="font-size: 0.85rem;">Operating Systems Basics</div>
+                    <div class="item-title">Cisco | 2026</div>
+                </div>
+                <div class="item">
+                    <div class="item-header" style="font-size: 0.85rem;">CCNA Introduction to Networks</div>
+                    <div class="item-title">Cisco | 2025</div>
+                </div>
+                <div class="item">
+                    <div class="item-header" style="font-size: 0.85rem;">Temel Ağ Teknolojileri</div>
+                    <div class="item-title">BTK Akademi | 2025</div>
+                </div>
+                <div class="item">
+                    <div class="item-header" style="font-size: 0.85rem;">Google Cloud ile Bulut Bilişim</div>
+                    <div class="item-title">BTK Akademi | 2024</div>
+                </div>
+                <div class="item">
+                    <div class="item-header" style="font-size: 0.85rem;">Ağ Temelleri</div>
+                    <div class="item-title">BTK Akademi | 2024</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>TEKNOLOJİLER</h2>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <h4>Sistem</h4>
+                    <p>Windows Servers and Operating Systems, Linux</p>
+                    <p>Veeam, PPDM, Zabbix, Grafana</p>
+                </div>
+                <div class="skill-cat">
+                    <h4>APP</h4>
+                    <p>ManageEngine, ESET, Trend Micro, GTBDLP, AOMEI Backupper...</p>
+                </div>
+                <div class="skill-cat">
+                    <h4>Yazılım</h4>
+                    <p>Python; Pandas, NumPy, Scikit-learn, NLP</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>YETKİNLİKLER</h2>
+            <div class="competencies-grid">
+                <div class="comp-item">
+                    <i class="fas fa-users"></i>
+                    Problem çözme ve hızlı aksiyon alma
+                </div>
+                <div class="comp-item">
+                    <i class="fas fa-chart-line"></i>
+                    Etkili iletişim ve risk/durum kontrolü
+                </div>
+                <div class="comp-item">
+                    <i class="fas fa-search"></i>
+                    Takım çalışması, işbirliği ve planlama
+                </div>
+                <div class="comp-item">
+                    <i class="fas fa-bolt"></i>
+                    Analitik düşünce ve dikkatli gözlem
+                </div>
+                <div class="comp-item">
+                    <i class="fas fa-robot"></i>
+                    Yapay zeka ve otomasyon araçları ile süreç iyileştirme
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>MESLEKİ GELİŞİM & İLGİ ALANLARI</h2>
+            <p style="font-size: 0.85rem; margin: 0;">
                 Sanallaştırma ve yedeklilik, veri analizi, görselleştirme, sınıflandırma, tahminleme çalışmaları ile operasyonel verimliliği artırmaya odaklanıyorum.
             </p>
-        </div>
-
+        </section>
     </div>
-
-</aside>
-
-<!-- MAIN -->
-
-<main class="main">
-
-<!-- SUMMARY -->
-
-<section class="section">
-
-    <div class="section-title">
-        <i class="fas fa-user"></i>
-        <h2>Özet</h2>
-    </div>
-
-    <div class="summary-box">
-
-        <p>
-            Bilgisayar mühendisliği mezunuyum. Yıldız Teknik Üniversitesi, Bilgi Teknolojileri ikinci öğretim yüksek lisans öğrencisiyim.
-            Sistem teknolojileri, sanallaştırma ve yedeklilik alanlarında kendimi geliştirmekteyim. Sistem destek veya son kullanıcı desteği
-            pozisyonlarında kurumsal IT altyapılarına katkı sağlayabileceğim rollerde tam zamanlı iş aramaktayım.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- EXPERIENCE -->
-
-<section class="section">
-
-    <div class="section-title">
-        <i class="fas fa-briefcase"></i>
-        <h2>Deneyim</h2>
-    </div>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-
-            <div class="item-head">
-                <h3>Tacirler Yatırım Menkul Değerler A.Ş</h3>
-                <div class="date">10.2025 - 01.2026</div>
-            </div>
-
-            <div class="role">
-                Sistem Destek ve Operasyon Uzman Yardımcısı
-            </div>
-
-            <ul>
-                <li>Veeam Backup & Replication ve PPDM kullanarak backup, restore ve disaster recovery operasyonlarını destekledim.</li>
-                <li>Planlı bakım süreçleri kapsamında Windows sunucular üzerinde ESET Endpoint Security, Manage Engine Agent ve Zabbix Agent güncelleme ve versiyon yönetimi işlemlerini gerçekleştirerek sistem güvenliği ve izleme sürekliliğini sağladım.</li>
-                <li>Windows Server ortamlarında Active Directory AD kullanıcı, grup ve Group Policy GPO yönetimi operasyonlarına destek sağladım.DNS ve DHCP servislerinin yapılandırılması, izlenmesi ve servis sürekliliğine yönelik çalışmalarda görev aldım.</li>
-                <li>Microsoft Exchange Server migration süreçlerinde teknik destek sağlayarak, geçiş öncesi ve sonrası son kullanıcı desteği verdim.</li>
-                <li>Kullanıcı - Uygulama Adaptasyon eğitimleri, kullanım senaryoları ve temel destek süreçlerine ayrıca kurum içi ve kurum dışı denetim süreçlerine katkı sağladım.</li>
-            </ul>
-
-        </div>
-
-        <div class="timeline-item">
-
-            <div class="item-head">
-                <h3>Özak Global Holding A.Ş</h3>
-                <div class="date">08.2024 - 07.2025</div>
-            </div>
-
-            <div class="role">
-                Sistem Destek Uzman Yardımcısı
-            </div>
-
-            <ul>
-                <li>IT Altyapı ve Operasyon Departmanı bünyesinde, kurum içi kullanıcıların donanım ve yazılım ihtiyaçlarına yönelik son kullanıcı arıza ve taleplerini ticket sistemi üzerinden alarak SLA kapsamında çözüme ulaştırdım.</li>
-                <li>şe giriş / çıkış onboarding & offboarding süreçlerinde bilgisayar, yazılım ve çevre birimi kurulumlarını gerçekleştirdim; kullanıcı hesap ve yetkilendirme işlemlerine destek verdim.</li>
-                <li>Masaüstü ve dizüstü bilgisayarlar, yazıcı, tarayıcı, IP telefon ve mobil cihazlar için donanımsal ve yazılımsal destek sağladım. Yazıcı arızaları, toner ve sarf malzemeleri takibi ile garanti ve yetkili servis süreçlerini yürüttüm.</li>
-                <li>IT envanter yönetimi, donanım takibi, zimmet süreçleri ve raporlama çalışmalarına katkıda bulundum.</li>
-                <li>Donanım, lisans ve cihaz envanter takibinin yapılması, zimmetleme süreçlerinin raporlanması; bilgi güvenliği politikaları doğrultusunda dokümantasyon ve süreç iyileştirme çalışmalarının yürütülmesinde görev aldım.</li>
-                <li>Kablolu/kablosuz ağ LAN/WLAN bağlantı sorunlarının giderilmesi, temel ağ destek işlemlerinde network ekibiyle koordineli çalıştım.</li>
-                <li>Üst yönetim VIP kullanıcılar için hızlı müdahale gerektiren IT destek taleplerini önceliklendirerek çözüme ulaştırdım.Günlük operasyonel iş akışında kullanıcı memnuniyeti ve iş sürekliliğini önceliklendirdim.</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- GRID -->
-
-<div class="grid-2">
-
-<section class="section">
-
-    <div class="section-title">
-        <i class="fas fa-graduation-cap"></i>
-        <h2>Eğitim</h2>
-    </div>
-
-    <div class="card">
-
-        <div class="edu">
-            <div class="edu-top">
-                <strong>Yıldız Teknik Üniversitesi</strong>
-                <span class="edu-date">2026 - Devam Ediyor</span>
-            </div>
-            <p>Bilgi Teknolojileri (İÖ) / Yüksek Lisans</p>
-        </div>
-
-        <div class="edu">
-            <div class="edu-top">
-                <strong>İstanbul Ticaret Üniversitesi</strong>
-                <span class="edu-date">2018 - 2024</span>
-            </div>
-            <p>Bilgisayar Mühendisliği / Lisans</p>
-        </div>
-
-        <div class="edu">
-            <div class="edu-top">
-                <strong>Özel Esenler Kültür Temel Lisesi</strong>
-                <span class="edu-date">2013 - 2017</span>
-            </div>
-            <p>Sayısal Alan / Lise</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="section">
-
-    <div class="section-title">
-        <i class="fas fa-code"></i>
-        <h2>Teknolojiler</h2>
-    </div>
-
-    <div class="card">
-
-        <div class="skill-box">
-            <h4>Sistem</h4>
-            <p>Windows Servers and Operating Systems,linux</p>
-            <p>Veeam,PPDM,Zabbix,Grafana</p>
-        </div>
-
-        <div class="skill-box">
-            <h4>APP</h4>
-            <p>ManageEngine,ESET,Trend Micro,GTBDLP,AOMEI Backupper...</p>
-        </div>
-
-        <div class="skill-box">
-            <h4>Yazılım</h4>
-            <p>Python; Pandas,NumPy,Scikit-learn,NLP</p>
-        </div>
-
-    </div>
-
-</section>
-
-</div>
-
-<!-- PROJECTS -->
-
-<section class="section">
-
-    <div class="section-title">
-        <i class="fas fa-diagram-project"></i>
-        <h2>Projeler</h2>
-    </div>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-
-            <div class="item-head">
-                <h3>EEG Verileri ile Epilepsi Sınıflandırma</h3>
-                <div class="date">Nisan 2026</div>
-            </div>
-
-            <div class="role">
-                Veri Bilimi Projesi
-            </div>
-
-            <ul>
-                <li>Bangalore EEG veri seti kullanılarak multivariate analiz yöntemleri ile nöbet tespiti üzerine çalışıldı.</li>
-                <li>Python (Scikit-learn) kullanılarak sınıflandırma modelleri geliştirildi ve doğruluk analizleri yapıldı.</li>
-            </ul>
-
-        </div>
-
-        <div class="timeline-item">
-
-            <div class="item-head">
-                <h3>E-Ticaret Ürün Yorum-Puan Regresyon Analizi</h3>
-                <div class="date">2023</div>
-            </div>
-
-            <div class="role">
-                Lisans Bitirme Projesi
-            </div>
-
-            <ul>
-                <li>Python (Scikit-learn, Pandas, NumPy) kütüphaneleri kullanılarak, müşteri yorumları ve puanları arasındaki korelasyonun analiz edilmesi ve e-ticaret platformları için optimize edilmiş bir puan tahminleme modeli geliştirilmesi.</li>
-                <li>NLP (TF-IDF) teknikleri ile ham metin verilerinin ön işleme süreçlerinin yönetilmesi, özellik çıkarımı ve farklı regresyon modellerinin performans karşılaştırmalı analizlerinin yürütülmesi.</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CERTIFICATES -->
-
-<section class="section">
-
-    <div class="section-title">
-        <i class="fas fa-certificate"></i>
-        <h2>Sertifikalar</h2>
-    </div>
-
-    <div class="card">
-
-        <div class="cert-item">
-            <strong>Network Technician Career Path</strong>
-            <p>Cisco | 2026</p>
-        </div>
-
-        <div class="cert-item">
-            <strong>Operating Systems Basics</strong>
-            <p>Cisco | 2026</p>
-        </div>
-
-        <div class="cert-item">
-            <strong>CCNA Introduction to Networks</strong>
-            <p>Cisco | 2025</p>
-        </div>
-
-        <div class="cert-item">
-            <strong>Temel Ağ Teknolojileri</strong>
-            <p>BTK Akademi | 2025</p>
-        </div>
-
-        <div class="cert-item">
-            <strong>Google Cloud ile Bulut Bilişim</strong>
-            <p>BTK Akademi | 2024</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- COMPETENCIES -->
-
-<section class="section">
-
-    <div class="section-title">
-        <i class="fas fa-layer-group"></i>
-        <h2>Yetkinlikler</h2>
-    </div>
-
-    <div class="competencies-grid">
-
-        <div class="comp-item">
-            <i class="fas fa-users"></i>
-            Problem çözme ve hızlı aksiyon alma
-        </div>
-
-        <div class="comp-item">
-            <i class="fas fa-chart-line"></i>
-            Etkili iletişim ve risk/durum kontrolü
-        </div>
-
-        <div class="comp-item">
-            <i class="fas fa-search"></i>
-            Takım çalışması,işbirliği ve planlama
-        </div>
-
-        <div class="comp-item">
-            <i class="fas fa-bolt"></i>
-            Analitik düşünce ve dikkatli gözlem
-        </div>
-
-        <div class="comp-item">
-            <i class="fas fa-robot"></i>
-            Yapay zeka ve otomasyon araçları ile süreç iyileştirme
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-</div>
-</div>
 
 </body>
 </html>
