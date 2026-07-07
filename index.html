@@ -1,900 +1,260 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mustafa Uzun | Bilgisayar Mühendisi & IT Uzmanı</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
-<style>
-
-:root{
-    --bg:#020617;
-    --surface:#0f172a;
-    --surface-2:#111c33;
-    --border:rgba(255,255,255,.08);
-    --primary:#38bdf8;
-    --primary-soft:rgba(56,189,248,.12);
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --success:#10b981;
-    --radius:24px;
-    --shadow:0 25px 50px rgba(0,0,0,.45);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:
-        radial-gradient(circle at top left, rgba(56,189,248,.12), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(14,165,233,.10), transparent 35%),
-        var(--bg);
-    color:var(--text);
-    line-height:1.7;
-    overflow-x:hidden;
-}
-
-a{
-    text-decoration:none;
-}
-
-.container{
-    width:min(1200px,92%);
-    margin:auto;
-}
-
-/* NAV */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(18px);
-    background:rgba(2,6,23,.72);
-    border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.nav-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo{
-    font-size:1.1rem;
-    font-weight:800;
-    letter-spacing:.5px;
-}
-
-.logo span{
-    color:var(--primary);
-}
-
-.nav-links{
-    display:flex;
-    gap:28px;
-}
-
-.nav-links a{
-    color:var(--muted);
-    font-size:.92rem;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:white;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    position:relative;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:40px;
-    align-items:center;
-}
-
-.status{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:8px 16px;
-    background:rgba(16,185,129,.12);
-    border:1px solid rgba(16,185,129,.25);
-    color:var(--success);
-    border-radius:999px;
-    font-size:.75rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:26px;
-}
-
-.status-dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--success);
-    box-shadow:0 0 12px var(--success);
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-    0%{transform:scale(1);opacity:1;}
-    50%{transform:scale(1.4);opacity:.5;}
-    100%{transform:scale(1);opacity:1;}
-}
-
-.hero h1{
-    font-size:4.3rem;
-    line-height:1;
-    font-weight:800;
-    letter-spacing:-3px;
-    margin-bottom:18px;
-}
-
-.hero h1 span{
-    color:var(--primary);
-}
-
-.hero-subtitle{
-    color:var(--primary);
-    font-size:1.05rem;
-    font-weight:600;
-    margin-bottom:24px;
-}
-
-.hero-text{
-    color:var(--muted);
-    max-width:720px;
-    font-size:1rem;
-    margin-bottom:35px;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:16px;
-    margin-bottom:40px;
-}
-
-.btn{
-    padding:14px 24px;
-    border-radius:16px;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    transition:.3s ease;
-    font-weight:700;
-}
-
-.btn-primary{
-    background:var(--primary);
-    color:#00111d;
-}
-
-.btn-secondary{
-    border:1px solid rgba(255,255,255,.12);
-    color:var(--text);
-    background:rgba(255,255,255,.03);
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-}
-
-.socials{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.socials a{
-    width:48px;
-    height:48px;
-    border-radius:14px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--muted);
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.03);
-    transition:.3s;
-    font-size:1rem;
-}
-
-.socials a:hover{
-    background:var(--primary);
-    color:#000;
-}
-
-/* HERO CARD */
-
-.hero-card{
-    background:linear-gradient(180deg, rgba(17,28,51,.9), rgba(15,23,42,.85));
-    border:1px solid var(--border);
-    border-radius:32px;
-    padding:32px;
-    box-shadow:var(--shadow);
-    position:relative;
-    overflow:hidden;
-}
-
-.hero-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at top right, rgba(56,189,248,.18), transparent 40%);
-}
-
-.card-top{
-    position:relative;
-    z-index:2;
-}
-
-.mini-title{
-    font-size:.78rem;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    color:var(--primary);
-    margin-bottom:18px;
-    font-weight:700;
-}
-
-.info-row{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    margin-bottom:22px;
-}
-
-.info-row i{
-    width:44px;
-    height:44px;
-    background:var(--primary-soft);
-    border-radius:14px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--primary);
-}
-
-.info-row h4{
-    font-size:.95rem;
-    margin-bottom:4px;
-}
-
-.info-row p{
-    color:var(--muted);
-    font-size:.88rem;
-}
-
-/* SECTION */
-
-section{
-    padding:110px 0;
-}
-
-.section-title{
-    margin-bottom:55px;
-}
-
-.section-title span{
-    color:var(--primary);
-    font-size:.8rem;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    font-weight:700;
-}
-
-.section-title h2{
-    margin-top:12px;
-    font-size:2.4rem;
-    letter-spacing:-1px;
-}
-
-/* PROJECTS */
-
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:24px;
-}
-
-.project-card{
-    background:rgba(15,23,42,.8);
-    border:1px solid var(--border);
-    border-radius:28px;
-    padding:28px;
-    transition:.35s;
-    position:relative;
-    overflow:hidden;
-}
-
-.project-card::before{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    background:rgba(56,189,248,.08);
-    border-radius:50%;
-    top:-80px;
-    right:-80px;
-}
-
-.project-card:hover{
-    transform:translateY(-10px);
-    border-color:rgba(56,189,248,.3);
-}
-
-.project-icon{
-    width:62px;
-    height:62px;
-    border-radius:18px;
-    background:var(--primary-soft);
-    color:var(--primary);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.3rem;
-    margin-bottom:24px;
-}
-
-.project-card h3{
-    margin-bottom:12px;
-    font-size:1.1rem;
-}
-
-.project-card p{
-    color:var(--muted);
-    font-size:.92rem;
-}
-
-/* SKILLS */
-
-.skills-layout{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:26px;
-}
-
-.skill-box{
-    background:rgba(15,23,42,.85);
-    border:1px solid var(--border);
-    border-radius:28px;
-    padding:30px;
-}
-
-.skill-box h3{
-    margin-bottom:22px;
-    font-size:1.1rem;
-}
-
-.skill-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.skill{
-    padding:10px 14px;
-    border-radius:12px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    color:var(--muted);
-    font-size:.85rem;
-    transition:.3s;
-}
-
-.skill:hover{
-    background:var(--primary);
-    color:#000;
-}
-
-/* EDUCATION */
-
-.education-card{
-    background:rgba(15,23,42,.85);
-    border:1px solid var(--border);
-    border-radius:28px;
-    padding:32px;
-}
-
-.edu-item{
-    padding-left:24px;
-    border-left:2px solid rgba(56,189,248,.35);
-    margin-bottom:30px;
-    position:relative;
-}
-
-.edu-item:last-child{
-    margin-bottom:0;
-}
-
-.edu-item::before{
-    content:"";
-    position:absolute;
-    width:14px;
-    height:14px;
-    border-radius:50%;
-    background:var(--primary);
-    left:-8px;
-    top:4px;
-}
-
-.edu-item h4{
-    margin-bottom:6px;
-}
-
-.edu-item p{
-    color:var(--muted);
-    font-size:.9rem;
-}
-
-/* CONTACT */
-
-.contact-box{
-    text-align:center;
-    background:
-    linear-gradient(135deg, rgba(56,189,248,.12), rgba(15,23,42,.9));
-    border:1px solid rgba(56,189,248,.15);
-    padding:60px 30px;
-    border-radius:32px;
-}
-
-.contact-box h2{
-    font-size:2.3rem;
-    margin-bottom:18px;
-}
-
-.contact-box p{
-    color:var(--muted);
-    max-width:700px;
-    margin:auto auto 30px;
-}
-
-/* FOOTER */
-
-footer{
-    padding:40px 0;
-    border-top:1px solid rgba(255,255,255,.05);
-    color:var(--muted);
-    text-align:center;
-    font-size:.85rem;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:980px){
-
-    .hero-grid,
-    .skills-layout{
-        grid-template-columns:1fr;
-    }
-
-    .hero{
-        padding:120px 0 60px;
-        min-height:auto;
-    }
-
-    .hero h1{
-        font-size:3rem;
-    }
-}
-
-@media(max-width:650px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:2.4rem;
-    }
-
-    .section-title h2{
-        font-size:1.8rem;
-    }
-
-    .btn{
-        width:100%;
-        justify-content:center;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzun Çanta | Modern ve Şık Kadın Çantaları</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #111111;
+            --accent: #8c7662;
+            --bg-light: #f9f6f3;
+            --text-muted: #666666;
+            --border: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* Üst Menü / Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero / Tanıtım Bölümü */
+        .hero {
+            background-color: var(--bg-light);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+        }
+
+        /* Ürünler Listesi */
+        .products-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Mock Resim Alanı (Görsel yükleyene kadar geçici renkli alanlar) */
+        .product-image {
+            width: 100%;
+            height: 350px;
+            background-color: #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Footer / Alt Bilgi */
+        footer {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 13px;
+        }
+
+        footer p {
+            color: #888888;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-
-<nav>
-    <div class="container nav-inner">
-        <div class="logo">Mustafa<span>Uzun</span></div>
-
-        <div class="nav-links">
-            <a href="#projects">Projeler</a>
-            <a href="#skills">Yetkinlikler</a>
-            <a href="#education">Eğitim</a>
-            <a href="#contact">İletişim</a>
+    <header>
+        <div class="nav-container">
+            <div class="logo">UZUN</div>
+            <nav>
+                <a href="#">Yeni Gelenler</a>
+                <a href="#">Omuz Çantası</a>
+                <a href="#">Sırt Çantası</a>
+                <a href="#">İletişim</a>
+            </nav>
         </div>
-    </div>
-</nav>
+    </header>
 
-<!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Zarafet ve Fonksiyonellik Bir Arada</h1>
+            <p>Modern kadının günlük yaşamına şıklık katmak için tasarlanmış, birinci sınıf işçilikle üretilen yeni sezon çanta koleksiyonumuzu keşfedin.</p>
+            <a href="#" class="btn">Koleksiyonu İncele</a>
+        </div>
+    </section>
 
-<section class="hero">
-    <div class="container hero-grid">
-
-        <div>
-
-            <div class="status">
-                <div class="status-dot"></div>
-                Aktif Sistem
+    <main class="products-section">
+        <h2 class="section-title">Öne Çıkan Modeller</h2>
+        
+        <div class="products-grid">
+            
+            <div class="product-card">
+                <div class="product-image">Çanta Görseli 1</div>
+                <div class="product-info">
+                    <div class="product-category">Deri Omuz Çantası</div>
+                    <div class="product-title">Luna Süet Detaylı Çanta</div>
+                    <div class="product-price">2.450,00 TL</div>
+                </div>
             </div>
 
-            <h1>
-                Mustafa <span>Uzun</span>
-            </h1>
-
-            <div class="hero-subtitle">
-                Bilgisayar Mühendisi • IT Uzmanı
+            <div class="product-card">
+                <div class="product-image">Çanta Görseli 2</div>
+                <div class="product-info">
+                    <div class="product-category">El Çantası</div>
+                    <div class="product-title">Sophia Klasik Baget Çanta</div>
+                    <div class="product-price">1.890,00 TL</div>
+                </div>
             </div>
 
-            <p class="hero-text">
-                Bilgisayar Mühendisliği eğitimi ve BT altyapı/son kullanıcı desteği alanlarındaki pratik tecrübelerimle, kurumsal sistem operasyonlarına değer katmayı hedefleyen motivasyonu yüksek
-                bir Sistem Destek Uzman Yardımcısı adayıyım. Problem çözme odaklı, dokümantasyona önem veren ve teknik problemleri son kullanıcı
-                seviyesinde analitik yaklaşımlarla çözebilen bir takım oyuncusu olarak, BT operasyon süreçlerinin kesintisiz yürütülmesine katkı sağlamayı amaçlıyorum.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="https://gitafauzun.github.io/resume.html" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-file-arrow-down"></i>
-                    CV Görüntüle
-                </a>
-
-                <a href="mailto:mail.mustafa.uzun@gmail.com" class="btn btn-secondary">
-                    <i class="fas fa-paper-plane"></i>
-                    İletişime Geç
-                </a>
-
-            </div>
-
-            <div class="socials">
-
-                <a href="mailto:mail.mustafa.uzun@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
-
-                <a href="https://linkedin.com/in/mustafauzun99" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-
-                <a href="https://github.com/gitafauzun" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-
+            <div class="product-card">
+                <div class="product-image">Çanta Görseli 3</div>
+                <div class="product-info">
+                    <div class="product-category">Sırt Çantası</div>
+                    <div class="product-title">Amber Günlük Deri Sırt Çantası</div>
+                    <div class="product-price">2.950,00 TL</div>
+                </div>
             </div>
 
         </div>
-
-        <!-- RIGHT CARD -->
-
-        <div class="hero-card">
-
-            <div class="card-top">
-
-                <div class="mini-title">
-                    Profesyonel Profil
-                </div>
-
-                <div class="info-row">
-                    <i class="fas fa-server"></i>
-
-                    <div>
-                        <h4>Sistem & IT Operasyonları</h4>
-                        <p>
-                            Sistem destek, kullanıcı desteği, altyapı yönetimi ve kurumsal IT süreçleri.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="info-row">
-                    <i class="fas fa-chart-column"></i>
-
-                    <div>
-                        <h4>Veri Analizi & Görselleştirme</h4>
-                        <p>
-                            Power BI, Python, Grafana ve analitik dashboard geliştirme.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="info-row">
-                    <i class="fas fa-brain"></i>
-
-                    <div>
-                        <h4>AI & Machine Learning</h4>
-                        <p>
-                            NLP, sınıflandırma, tahminleme ve veri modelleme çalışmaları.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="info-row">
-                    <i class="fas fa-location-dot"></i>
-
-                    <div>
-                        <h4>Konum</h4>
-                        <p>
-                            İstanbul, Türkiye
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-    <div class="container">
-
-        <div class="section-title">
-            <span>Portföy</span>
-            <h2>Öne Çıkan Çalışmalar</h2>
-        </div>
-
-        <div class="projects-grid">
-
-            <div class="project-card">
-
-                <div class="project-icon">
-                    <i class="fas fa-wave-square"></i>
-                </div>
-
-                <h3>*</h3>
-
-                <p>
-                    *
-                </p>
-
-            </div>
-
-            <div class="project-card">
-
-                <div class="project-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-
-                <h3>Zabbix & Grafana Monitoring</h3>
-
-                <p>
-                    Sunucu performans metriklerinin izlenmesi, darboğaz tespiti ve analitik dashboard sistemleri geliştirilmesi.
-                </p>
-
-            </div>
-
-            <div class="project-card">
-
-                <div class="project-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-
-                <h3>Borsa Veri Analiz Modelleri</h3>
-
-                <p>
-                    Python ve Excel entegrasyonu ile teknik analiz, veri modelleme ve yatırım stratejisi simülasyonları.
-                </p>
-
-            </div>
-
-            <div class="project-card">
-
-                <div class="project-icon">
-                    <i class="fas fa-cart-shopping"></i>
-                </div>
-
-                <h3>E-Ticaret NLP Puan Tahminleme</h3>
-
-                <p>
-                    TF-IDF teknikleri ve regresyon modelleri kullanılarak müşteri yorumlarından puan tahmini yapan ML modeli.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-    <div class="container">
-
-        <div class="section-title">
-            <span>Teknik Yetkinlikler</span>
-            <h2>Uzmanlık Alanları</h2>
-        </div>
-
-        <div class="skills-layout">
-
-            <div class="skill-box">
-
-                <h3>Sistem & Altyapı</h3>
-
-                <div class="skill-tags">
-                    <div class="skill">Sistem Destek</div>
-                    <div class="skill">Network Destek</div>
-                    <div class="skill">Son Kullanıcı Desteği</div>
-                    <div class="skill">Yazılım Destek</div>
-                    <div class="skill">Donanım Yönetimi</div>
-                    <div class="skill">IT Operasyonları</div>
-                </div>
-
-            </div>
-
-            <div class="skill-box">
-
-                <h3>Veri Bilimi & AI</h3>
-
-                <div class="skill-tags">
-                    <div class="skill">Python</div>
-                    <div class="skill">Pandas</div>
-                    <div class="skill">NumPy</div>
-                    <div class="skill">Scikit-learn</div>
-                    <div class="skill">Machine Learning</div>
-                    <div class="skill">NLP</div>
-                </div>
-
-            </div>
-
-            <div class="skill-box">
-
-                <h3>Monitoring & Analitik</h3>
-
-                <div class="skill-tags">
-                    <div class="skill">Power BI</div>
-                    <div class="skill">Grafana</div>
-                    <div class="skill">Zabbix</div>
-                    <div class="skill">Dashboard Design</div>
-                    <div class="skill">Raporlama</div>
-                </div>
-
-            </div>
-
-            <div class="skill-box">
-
-                <h3>Ek Teknolojiler</h3>
-
-                <div class="skill-tags">
-                    <div class="skill">Git & GitHub</div>
-                    <div class="skill">Linux</div>
-                    <div class="skill">Excel</div>
-                    <div class="skill">Veri Görselleştirme</div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- EDUCATION -->
-
-<section id="education">
-
-    <div class="container">
-
-        <div class="section-title">
-            <span>Akademik Geçmiş</span>
-            <h2>Eğitim Bilgileri</h2>
-        </div>
-
-        <div class="education-card">
-
-            <div class="edu-item">
-                <h4>Yıldız Teknik Üniversitesi</h4>
-                <p>Bilgi Teknolojileri (İÖ) - Yüksek Lisans</p>
-                <p>2026 - Devam Ediyor</p>
-            </div>
-
-            <div class="edu-item">
-                <h4>İstanbul Ticaret Üniversitesi</h4>
-                <p>Bilgisayar Mühendisliği - Lisans</p>
-                <p>2018 - 2024</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-    <div class="container">
-
-        <div class="contact-box">
-
-            <h2>Birlikte Çalışalım</h2>
-
-            <p>
-                Sistem desteği ve IT operasyonları için benimle iletişime geçebilirsiniz.
-            </p>
-
-            <div class="hero-buttons" style="justify-content:center; margin-top:10px;">
-
-                <a href="mailto:mail.mustafa.uzun@gmail.com" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i>
-                    E-Posta Gönder
-                </a>
-
-                <a href="https://linkedin.com/in/mustafauzun99" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="container">
-
-        <p>© 2026 Mustafa Uzun — Tüm Hakları Saklıdır.</p>
-
-        <p style="margin-top:8px; font-size:.8rem;">
-            • İstanbul / Türkiye
-        </p>
-
-    </div>
-
-</footer>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 UZUN ÇANTA. Tüm Hakları Saklıdır.</p>
+    </footer>
 
 </body>
 </html>
