@@ -1,201 +1,25 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>UZN ÇANTA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-body{
-background:#f6f6f6;
-}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-header{
-background:#111;
-color:white;
-padding:20px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:100;
-}
+<link rel="stylesheet" href="css/style.css">
 
-.logo{
-font-size:30px;
-font-weight:bold;
-letter-spacing:2px;
-color:gold;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:30px;
-transition:.3s;
-}
-
-nav a:hover{
-color:gold;
-}
-
-.hero{
-height:90vh;
-background:url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80") center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-}
-
-.hero div{
-background:rgba(0,0,0,.55);
-padding:50px;
-border-radius:20px;
-}
-
-.hero h1{
-font-size:60px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:22px;
-margin-bottom:25px;
-}
-
-.btn{
-background:gold;
-color:black;
-padding:15px 35px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-transition:.4s;
-}
-
-.btn:hover{
-background:white;
-}
-
-.section-title{
-text-align:center;
-margin:60px 0 30px;
-font-size:40px;
-color:#222;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-padding:0 10% 80px;
-}
-
-.card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-.card-body{
-padding:20px;
-}
-
-.card-body h3{
-margin-bottom:10px;
-}
-
-.price{
-color:gold;
-font-size:22px;
-font-weight:bold;
-margin:15px 0;
-}
-
-.buy{
-display:block;
-background:#111;
-color:white;
-text-align:center;
-padding:12px;
-border-radius:8px;
-text-decoration:none;
-}
-
-.buy:hover{
-background:gold;
-color:black;
-}
-
-.banner{
-margin:70px 10%;
-height:350px;
-border-radius:20px;
-background:url("https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1600&q=80") center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.banner h2{
-background:rgba(0,0,0,.6);
-color:white;
-padding:30px;
-font-size:45px;
-border-radius:15px;
-}
-
-.about{
-padding:80px 10%;
-text-align:center;
-line-height:2;
-font-size:18px;
-background:white;
-}
-
-footer{
-background:#111;
-color:white;
-padding:30px;
-text-align:center;
-}
-
-.social{
-margin-top:15px;
-}
-
-.social a{
-color:gold;
-margin:0 10px;
-text-decoration:none;
-}
-
-</style>
+<link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
@@ -203,125 +27,50 @@ text-decoration:none;
 
 <header>
 
-<div class="logo">UZN ÇANTA</div>
-
-<nav>
-
-<a href="#">Ana Sayfa</a>
-<a href="#">Kadın</a>
-<a href="#">Erkek</a>
-<a href="#">Yeni Ürünler</a>
-<a href="#">İletişim</a>
-
-</nav>
-
 </header>
+
+<main>
 
 <section class="hero">
 
-<div>
+</section>
 
-<h1>Şıklığın Yeni Adresi</h1>
-
-<p>Premium Kalite Çantalar</p>
-
-<a href="#" class="btn">Alışverişe Başla</a>
-
-</div>
+<section class="categories">
 
 </section>
 
-<h2 class="section-title">Öne Çıkan Ürünler</h2>
-
-<section class="products">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80">
-
-<div class="card-body">
-
-<h3>Deri Omuz Çantası</h3>
-
-<div class="price">₺1.499</div>
-
-<a href="#" class="buy">Sepete Ekle</a>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=800&q=80">
-
-<div class="card-body">
-
-<h3>Modern Sırt Çantası</h3>
-
-<div class="price">₺1.299</div>
-
-<a href="#" class="buy">Sepete Ekle</a>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80">
-
-<div class="card-body">
-
-<h3>Luxury El Çantası</h3>
-
-<div class="price">₺1.999</div>
-
-<a href="#" class="buy">Sepete Ekle</a>
-
-</div>
-
-</div>
+<section class="featured-products">
 
 </section>
 
 <section class="banner">
 
-<h2>%40'a Varan İndirimler</h2>
+</section>
+
+<section class="new-products">
 
 </section>
 
-<section class="about">
-
-<h2 class="section-title">UZN ÇANTA</h2>
-
-<p>
-
-UZN ÇANTA, kaliteyi ve şıklığı bir araya getiren modern çanta markasıdır.
-Kadın, erkek ve günlük kullanım için seçkin koleksiyonlarımızla tarzınıza değer katıyoruz.
-Her ürünümüzde kaliteli malzeme ve estetik tasarımı bulabilirsiniz.
-
-</p>
+<section class="best-sellers">
 
 </section>
+
+<section class="reviews">
+
+</section>
+
+<section class="instagram">
+
+</section>
+
+</main>
 
 <footer>
 
-<h3>UZN ÇANTA</h3>
-
-<p>© 2026 Tüm Hakları Saklıdır.</p>
-
-<div class="social">
-
-<a href="#">Instagram</a>
-
-<a href="#">Facebook</a>
-
-<a href="#">WhatsApp</a>
-
-</div>
-
 </footer>
 
+<script src="js/app.js"></script>
+
 </body>
+
 </html>
