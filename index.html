@@ -1,260 +1,289 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UZN Çanta | Modern ve Şık Kadın Çantaları</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #111111;
-            --accent: #8c7662;
-            --bg-light: #f9f6f3;
-            --text-muted: #666666;
-            --border: #e5e5e5;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erciyes Dağı</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        body {
-            background-color: #ffffff;
-            color: var(--primary);
-            line-height: 1.6;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
 
-        /* Üst Menü / Navbar */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-        }
+body{
+background:#f8f8f8;
+color:#222;
+}
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.75);
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+.logo{
+color:#fff;
+font-size:28px;
+font-weight:bold;
+text-decoration:none;
+}
 
-        nav a {
-            text-decoration: none;
-            color: var(--primary);
-            margin: 0 15px;
-            font-weight: 500;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:.3s;
+}
 
-        nav a:hover {
-            color: var(--accent);
-        }
+nav a:hover{
+color:#ffd166;
+}
 
-        /* Hero / Tanıtım Bölümü */
-        .hero {
-            background-color: var(--bg-light);
-            padding: 80px 20px;
-            text-align: center;
-        }
+.hero{
+height:100vh;
+background:url("erciyes.jpg") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+position:relative;
+}
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+}
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
+.hero-content{
+position:relative;
+max-width:800px;
+padding:20px;
+}
 
-        .hero p {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
+.hero h1{
+font-size:65px;
+margin-bottom:20px;
+}
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 14px 32px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            border-radius: 0;
-            transition: background-color 0.3s;
-        }
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
 
-        .btn:hover {
-            background-color: var(--accent);
-        }
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#ffd166;
+color:#111;
+text-decoration:none;
+font-weight:bold;
+border-radius:30px;
+transition:.3s;
+}
 
-        /* Ürünler Listesi */
-        .products-section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
+.btn:hover{
+background:white;
+}
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 50px;
-        }
+section{
+padding:90px 10%;
+}
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+h2{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+}
 
-        .product-card {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            position: relative;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
+.about img{
+width:100%;
+border-radius:15px;
+}
 
-        /* Mock Resim Alanı (Görsel yükleyene kadar geçici renkli alanlar) */
-        .product-image {
-            width: 100%;
-            height: 350px;
-            background-color: #eaeaea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 14px;
-        }
+.about p{
+font-size:18px;
+line-height:1.8;
+}
 
-        .product-info {
-            padding: 20px;
-            text-align: center;
-        }
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
 
-        .product-category {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
+}
 
-        .product-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
+.card:hover{
+transform:translateY(-8px);
+}
 
-        .product-price {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--accent);
-        }
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
 
-        /* Footer / Alt Bilgi */
-        footer {
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 100px;
-            font-size: 13px;
-        }
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+}
 
-        footer p {
-            color: #888888;
-        }
-    </style>
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:45px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+}
+</style>
+
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">UZN</div>
-           <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="resume.html" class="active">Ürünler</a>
-    <a href="#">Koleksiyonlar</a>
-    <a href="#">İletişim</a>
+<header>
+
+<a href="#" class="logo">ERCİYES</a>
+
+<nav>
+<a href="#anasayfa">Ana Sayfa</a>
+<a href="#hakkinda">Hakkında</a>
+<a href="#ozellikler">Özellikler</a>
+<a href="#galeri">Galeri</a>
 </nav>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>BATTIK ABİİİİ</h1>
-            <p>Modern kadının günlük yaşamına şıklık katmak için tasarlanmış, birinci sınıf işçilikle üretilen yeni sezon çanta koleksiyonumuzu keşfedin.</p>
-           <a href="resume.html" class="btn">Koleksiyonu İncele</a>
-        </div>
-    </section>
+</header>
 
-    <main class="products-section">
-        <h2 class="section-title">Öne Çıkan Modeller</h2>
-        
-        <div class="products-grid">
-            
-            <div class="product-card">
-                <div class="product-image">Çanta Görseli 1</div>
-                <div class="product-info">
-                    <div class="product-category">Deri Omuz Çantası</div>
-                    <div class="product-title"> Süet Detaylı Çanta</div>
-                    <div class="product-price">2.450,00 TL</div>
-                </div>
-            </div>
+<section class="hero" id="anasayfa">
 
-            <div class="product-card">
-                <div class="product-image">Çanta Görseli 2</div>
-                <div class="product-info">
-                    <div class="product-category">El Çantası</div>
-                    <div class="product-title"> Klasik Baget Çanta</div>
-                    <div class="product-price">1.890,00 TL</div>
-                </div>
-            </div>
+<div class="hero-content">
 
-            <div class="product-card">
-                <div class="product-image">Çanta Görseli 3</div>
-                <div class="product-info">
-                    <div class="product-category">Sırt Çantası</div>
-                    <div class="product-title"> Günlük Deri Sırt Çantası</div>
-                    <div class="product-price">2.950,00 TL</div>
-                </div>
-            </div>
+<h1>Erciyes Dağı</h1>
 
-        </div>
-    </main>
+<p>
+Kayseri'nin simgesi olan Erciyes Dağı; doğa, tarih ve kış sporlarının buluştuğu eşsiz bir destinasyondur.
+</p>
 
-    <footer>
-        <p>&copy; 2026 UZN ÇANTA. Tüm Hakları Saklıdır.</p>
-    </footer>
+<a href="#hakkinda" class="btn">Keşfet</a>
+
+</div>
+
+</section>
+
+<section id="hakkinda">
+
+<h2>Erciyes Hakkında</h2>
+
+<div class="about">
+
+<img src="kayak.jpg" alt="Erciyes">
+
+<div>
+
+<p>
+
+Erciyes Dağı, Kayseri ilinde bulunan ve yaklaşık 3917 metre yüksekliğiyle Türkiye'nin en yüksek dağlarından biridir. Milyonlarca yıl önce oluşmuş sönmüş bir volkan olan Erciyes, günümüzde kayak merkezi, doğa yürüyüşleri ve dağcılık faaliyetleriyle her yıl binlerce ziyaretçiyi ağırlamaktadır.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="ozellikler">
+
+<h2>Öne Çıkan Özellikleri</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏔 3917 m Zirve</h3>
+<p>İç Anadolu'nun en yüksek noktalarından biridir.</p>
+</div>
+
+<div class="card">
+<h3>🎿 Kayak Merkezi</h3>
+<p>Modern pistleri ve teleferik sistemiyle Türkiye'nin önemli kayak merkezlerindendir.</p>
+</div>
+
+<div class="card">
+<h3>🥾 Doğa Sporları</h3>
+<p>Dağcılık, trekking ve kamp için ideal rotalara sahiptir.</p>
+</div>
+
+<div class="card">
+<h3>🌋 Volkanik Yapı</h3>
+<p>Sönmüş bir stratovolkan olup Kapadokya'nın oluşumunda önemli rol oynamıştır.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="galeri">
+
+<h2>Galeri</h2>
+
+<div class="gallery">
+
+<img src="erciyes.jpg" alt="">
+<img src="kayak.jpg" alt="">
+<img src="zirve.jpg" alt="">
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Erciyes Dağı Tanıtım Sitesi</h3>
+
+<p>© 2026 Tüm Hakları Saklıdır.</p>
+
+</footer>
 
 </body>
 </html>
