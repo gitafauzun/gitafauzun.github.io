@@ -3,285 +3,323 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Erciyes Dağı</title>
+<title>UZN ÇANTA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
-background:#f8f8f8;
-color:#222;
+background:#f6f6f6;
 }
 
 header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,.75);
-padding:18px 8%;
+background:#111;
+color:white;
+padding:20px 10%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-z-index:1000;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .logo{
-color:#fff;
-font-size:28px;
+font-size:30px;
 font-weight:bold;
-text-decoration:none;
+letter-spacing:2px;
+color:gold;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:25px;
+margin-left:30px;
 transition:.3s;
 }
 
 nav a:hover{
-color:#ffd166;
+color:gold;
 }
 
 .hero{
-height:100vh;
-background:url("erciyes.jpg") center/cover;
+height:90vh;
+background:url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80") center/cover;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
-position:relative;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.45);
-}
-
-.hero-content{
-position:relative;
-max-width:800px;
-padding:20px;
+.hero div{
+background:rgba(0,0,0,.55);
+padding:50px;
+border-radius:20px;
 }
 
 .hero h1{
-font-size:65px;
+font-size:60px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
-margin-bottom:30px;
+font-size:22px;
+margin-bottom:25px;
 }
 
 .btn{
-display:inline-block;
+background:gold;
+color:black;
 padding:15px 35px;
-background:#ffd166;
-color:#111;
+border-radius:30px;
 text-decoration:none;
 font-weight:bold;
-border-radius:30px;
-transition:.3s;
+transition:.4s;
 }
 
 .btn:hover{
 background:white;
 }
 
-section{
-padding:90px 10%;
-}
-
-h2{
+.section-title{
 text-align:center;
+margin:60px 0 30px;
 font-size:40px;
-margin-bottom:40px;
+color:#222;
 }
 
-.about{
+.products{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
-
-.about img{
-width:100%;
-border-radius:15px;
-}
-
-.about p{
-font-size:18px;
-line-height:1.8;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+padding:0 10% 80px;
 }
 
 .card{
 background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-transition:.3s;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.4s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.gallery img{
+.card img{
 width:100%;
-height:250px;
+height:300px;
 object-fit:cover;
-border-radius:10px;
+}
+
+.card-body{
+padding:20px;
+}
+
+.card-body h3{
+margin-bottom:10px;
+}
+
+.price{
+color:gold;
+font-size:22px;
+font-weight:bold;
+margin:15px 0;
+}
+
+.buy{
+display:block;
+background:#111;
+color:white;
+text-align:center;
+padding:12px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.buy:hover{
+background:gold;
+color:black;
+}
+
+.banner{
+margin:70px 10%;
+height:350px;
+border-radius:20px;
+background:url("https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1600&q=80") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.banner h2{
+background:rgba(0,0,0,.6);
+color:white;
+padding:30px;
+font-size:45px;
+border-radius:15px;
+}
+
+.about{
+padding:80px 10%;
+text-align:center;
+line-height:2;
+font-size:18px;
+background:white;
 }
 
 footer{
 background:#111;
 color:white;
-text-align:center;
 padding:30px;
-margin-top:50px;
+text-align:center;
 }
 
-@media(max-width:768px){
-
-.hero h1{
-font-size:45px;
+.social{
+margin-top:15px;
 }
 
-.about{
-grid-template-columns:1fr;
+.social a{
+color:gold;
+margin:0 10px;
+text-decoration:none;
 }
-}
+
 </style>
 
 </head>
+
 <body>
 
 <header>
 
-<a href="#" class="logo">ERCİYES</a>
+<div class="logo">UZN ÇANTA</div>
 
 <nav>
-<a href="#anasayfa">Ana Sayfa</a>
-<a href="#hakkinda">Hakkında</a>
-<a href="#ozellikler">Özellikler</a>
-<a href="#galeri">Galeri</a>
+
+<a href="#">Ana Sayfa</a>
+<a href="#">Kadın</a>
+<a href="#">Erkek</a>
+<a href="#">Yeni Ürünler</a>
+<a href="#">İletişim</a>
+
 </nav>
 
 </header>
 
-<section class="hero" id="anasayfa">
-
-<div class="hero-content">
-
-<h1>Erciyes Dağı</h1>
-
-<p>
-Kayseri'nin simgesi olan Erciyes Dağı; doğa, tarih ve kış sporlarının buluştuğu eşsiz bir destinasyondur.
-</p>
-
-<a href="#hakkinda" class="btn">Keşfet</a>
-
-</div>
-
-</section>
-
-<section id="hakkinda">
-
-<h2>Erciyes Hakkında</h2>
-
-<div class="about">
-
-<img src="kayak.jpg" alt="Erciyes">
+<section class="hero">
 
 <div>
 
+<h1>Şıklığın Yeni Adresi</h1>
+
+<p>Premium Kalite Çantalar</p>
+
+<a href="#" class="btn">Alışverişe Başla</a>
+
+</div>
+
+</section>
+
+<h2 class="section-title">Öne Çıkan Ürünler</h2>
+
+<section class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80">
+
+<div class="card-body">
+
+<h3>Deri Omuz Çantası</h3>
+
+<div class="price">₺1.499</div>
+
+<a href="#" class="buy">Sepete Ekle</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=800&q=80">
+
+<div class="card-body">
+
+<h3>Modern Sırt Çantası</h3>
+
+<div class="price">₺1.299</div>
+
+<a href="#" class="buy">Sepete Ekle</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80">
+
+<div class="card-body">
+
+<h3>Luxury El Çantası</h3>
+
+<div class="price">₺1.999</div>
+
+<a href="#" class="buy">Sepete Ekle</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="banner">
+
+<h2>%40'a Varan İndirimler</h2>
+
+</section>
+
+<section class="about">
+
+<h2 class="section-title">UZN ÇANTA</h2>
+
 <p>
 
-Erciyes Dağı, Kayseri ilinde bulunan ve yaklaşık 3917 metre yüksekliğiyle Türkiye'nin en yüksek dağlarından biridir. Milyonlarca yıl önce oluşmuş sönmüş bir volkan olan Erciyes, günümüzde kayak merkezi, doğa yürüyüşleri ve dağcılık faaliyetleriyle her yıl binlerce ziyaretçiyi ağırlamaktadır.
+UZN ÇANTA, kaliteyi ve şıklığı bir araya getiren modern çanta markasıdır.
+Kadın, erkek ve günlük kullanım için seçkin koleksiyonlarımızla tarzınıza değer katıyoruz.
+Her ürünümüzde kaliteli malzeme ve estetik tasarımı bulabilirsiniz.
 
 </p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="ozellikler">
-
-<h2>Öne Çıkan Özellikleri</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🏔 3917 m Zirve</h3>
-<p>İç Anadolu'nun en yüksek noktalarından biridir.</p>
-</div>
-
-<div class="card">
-<h3>🎿 Kayak Merkezi</h3>
-<p>Modern pistleri ve teleferik sistemiyle Türkiye'nin önemli kayak merkezlerindendir.</p>
-</div>
-
-<div class="card">
-<h3>🥾 Doğa Sporları</h3>
-<p>Dağcılık, trekking ve kamp için ideal rotalara sahiptir.</p>
-</div>
-
-<div class="card">
-<h3>🌋 Volkanik Yapı</h3>
-<p>Sönmüş bir stratovolkan olup Kapadokya'nın oluşumunda önemli rol oynamıştır.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="galeri">
-
-<h2>Galeri</h2>
-
-<div class="gallery">
-
-<img src="erciyes.jpg" alt="">
-<img src="kayak.jpg" alt="">
-<img src="zirve.jpg" alt="">
-
-</div>
 
 </section>
 
 <footer>
 
-<h3>Erciyes Dağı Tanıtım Sitesi</h3>
+<h3>UZN ÇANTA</h3>
 
 <p>© 2026 Tüm Hakları Saklıdır.</p>
+
+<div class="social">
+
+<a href="#">Instagram</a>
+
+<a href="#">Facebook</a>
+
+<a href="#">WhatsApp</a>
+
+</div>
 
 </footer>
 
